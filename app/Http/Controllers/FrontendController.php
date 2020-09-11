@@ -155,7 +155,7 @@ class FrontendController extends Controller
 		}     	
 
 	}
-	public function services($brand,$slug=null)
+	public function services($brand=null,$slug=null)
 	{
 
 		if($brand){
