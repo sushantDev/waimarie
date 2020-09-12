@@ -164,14 +164,14 @@ class FrontendController extends Controller
 			if ($slug) 
 				{
 					$brands =  Brand::where('brand', $brand)->first();
-		            $service = Service::where('slug', $slug)->whereIn('brand_id',[$brands->id])->first();
+		            $service = Service::where('slug', $slug)->where('brand_id',[$brands->id])->first();
 		            $services = Service::where('is_published', 1)->whereIn('brand_id',[$brands->id])->limit(4)->whereNotIn('id',[$service->id])->get();
 		            return view('frontend.service.service-detail',compact('services','service','brands')); 
 				} 
 
 				else{
 					$brands =  Brand::where('brand', $brand)->first();
-					$servicelist = Service::where('is_published', 1)->whereIn('brand_id',[$brands->id])->get();
+					$servicelist = Service::where('is_published', 1)->where('brand_id',[$brands->id])->get();
 					return view('frontend.service.service-list',compact('servicelist','brands'));
 				  
 

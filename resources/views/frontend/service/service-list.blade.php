@@ -56,7 +56,7 @@
 			                        <p>{!! str_limit($data->sub_description,100) !!}</p>
 			                        @endif
 			                        <div class="enroll_btn">
-		                            	<a href="{{route('services',$brands=$data->slug)}}" class="btn btn-default btn-sm">Read More</a>
+		                            	<a href="#" class="btn btn-default btn-sm">Read More</a>
 		                        	</div>
 			                    </div>
 		                  
