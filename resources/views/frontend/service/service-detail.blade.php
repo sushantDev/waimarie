@@ -13,7 +13,7 @@
 	                <nav aria-label="breadcrumb">
 	                  <ol class="breadcrumb justify-content-sm-end">
 	                    <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
-	                    <li class="breadcrumb-item active" aria-current="page"><a href="{{route('services')}}">{{$service->title}}</a></li>
+	                    <li class="breadcrumb-item active" aria-current="page"><a href="{{route('services',[$brands->brand,$service->slug])}}">{{$service->title}}</a></li>
 	                  </ol>
 	                </nav>
 	            </div>
@@ -91,7 +91,7 @@
                                             <a href="{{route('services',$data->slug)}}"><img src="{{asset($data->image->path)}}" alt="letest_post1"></a>
                                         </div>
                                         <div class="post_content">
-                                            <h6><a href="{{route('services',$data->slug)}}">{{$data->title}}</a></h6>
+                                            <h6><a href="{{route('services',[$brands->brand,$data->slug])}}">{{$data->title}}</a></h6>
                                         </div>
                                     </div>
                                 </li>

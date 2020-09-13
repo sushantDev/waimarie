@@ -430,13 +430,8 @@ section.small_pb,
     width: 140px;
     height: 120px;
 }
-.owl-prev
-{
-    top: 200px;
-}
 
-.owl-next
-{
+.owl-theme .owl-nav [class*="owl-"]{
     top: 200px;
 }
 .heading_s1.text-md-right::before {

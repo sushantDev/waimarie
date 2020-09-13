@@ -151,6 +151,9 @@
                                         <div class="form-group">
                                             <input type="text" required="" class="form-control" name="phone" placeholder="Phone No.">
                                         </div>
+                                        <div class="form-group">
+                                            <input type="number" required="" class="form-control" name="number" placeholder="No of Graduates" min="1" max="100">
+                                        </div> 
                                         
                             
                                         <div class="form-group col-12">  
@@ -173,9 +176,7 @@
                                                         
 
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <input type="number" required="" class="form-control" name="number" placeholder="No of Graduates" min="1" max="5">
-                                        </div -->
+                                        
                                         
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-default btn-block" name="hire">Hire</button>
