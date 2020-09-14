@@ -47,14 +47,14 @@
                     
                 </div>
                 @if(!empty($logogovernment))
-                <div class="row">
+                <div class="row industrial_row">
                     <div class="container">
                         <div class="row">
                             <h3 class="partner_header">Our Government Partners</h3>                           
                         </div>
                         <div class="row">
                             @foreach($logogovernment as $data)
-                            <div class="col-lg-3 col-sm-6">
+                            <div class="col-lg-3 col-sm-4">
                                 <div class="box_counter counter_style1 text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                                     <div class="counter_icon">
                                         <img  src="{{$data->image->path}}" alt="team1">
@@ -82,14 +82,14 @@
                 @endif
 
                 @if(!empty($logofund))
-                <div class="row">
+                <div class="row industrial_row">
                     <div class="container">
                         <div class="row">
                             <h3 class="partner_header">Our Funding Partners</h3>                           
                         </div>
                         <div class="row">
                             @foreach($logofund as $data)
-                            <div class="col-lg-3 col-sm-6">
+                            <div class="col-lg-3 col-sm-4">
                                 <div class="box_counter counter_style1 text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                                     <div class="counter_icon">
                                         <img  src="{{$data->image->path}}" alt="team1">
@@ -116,14 +116,14 @@
                 @endif
 
                 @if(!empty($logoimplement))
-                <div class="row">
+                <div class="row industrial_row">
                     <div class="container">
                         <div class="row">
                             <h3 class="partner_header">Our Implementing Partners</h3>                           
                         </div>
                         <div class="row">
                             @foreach($logoimplement as $data)
-                            <div class="col-lg-3 col-sm-6">
+                            <div class="col-lg-3 col-sm-4">
                                 <div class="box_counter counter_style1 text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                                     <div class="counter_icon" >
                                         <img  src="{{$data->image->path}}" alt="team1" >

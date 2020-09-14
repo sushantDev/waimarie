@@ -2998,6 +2998,7 @@ footer .widget_title {
 	right: 0;
 }
 .owl-theme .owl-nav [class*="owl-"] {
+	top: 40%;
 	color: #000;
 	font-size: 18px;
 }
@@ -3061,6 +3062,7 @@ to {
 }
 .content_desc {
 	position: relative;
+	height: 194px;
 	padding: 15px;
 }
 .price {
@@ -4787,3 +4789,5 @@ body.switch-open {
 {
 	margin-left: 40px;
 }
+
+

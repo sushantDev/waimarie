@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-lg-8">
                 
-                <div class="row">
+                <div class="row industrial_row">
                     <div class="single_event">
                     
                         <div class="event_title">

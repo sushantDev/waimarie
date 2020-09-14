@@ -36,7 +36,7 @@
 	            </div>
         	</div>
 	    	<div class="row">
-	        	<div class="col-lg-9">
+	        	<div class="col-lg-12">
 	            	<div class="single_post">                   
 	                    <div class="comment-area">
 	                        

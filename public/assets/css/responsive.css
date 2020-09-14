@@ -891,6 +891,10 @@ section,
 {
     font-size: 8px;
 }
+.new_content
+{
+    margin-left: 15px;
+}
 .default_content tr td p
 {
     font-size: 8px;
@@ -901,7 +905,7 @@ section,
 }
 .meta_data
 {
-	width: 260px;
+	width: 300px;
 }
 section.small_pt,
 .top_footer.small_pt {
@@ -1159,13 +1163,14 @@ blockquote {
 }
 .content-img
 {
-	width: 383px;
+	width: 350px;
 }
-
 .content_img
 {
-    width: 350px;
+    width: 384px;
 }
+
+
 }
 /* -------------------------------------------------
   max-width: 380px
@@ -1182,6 +1187,10 @@ blockquote {
 }
 .btn-login li a {
 	padding: 7px 15px;
+}
+.content_img
+{
+    width: 345px;
 }
 .course_tabs .nav-tabs li.nav-item a {
 	font-size: 13px;

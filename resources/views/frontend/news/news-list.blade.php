@@ -41,7 +41,7 @@
 
 		        	<div class="item" >
 		        		<div class="col-lg-4 col-sm-6">
-		        			<div class="content_box radius_all_10 box_shadow1 animation " data-animation="fadeInUp" data-animation-delay="0.0{{$count}}s" style="width: 350px; ,height: 420px;" >
+		        			<div class="content_box new_content radius_all_10 box_shadow1 animation " data-animation="fadeInUp" data-animation-delay="0.0{{$count}}s" style="width: 350px; ,height: 420px;" >
 			                	<div class="content_img content-img radius_ltrt_10">
 			                    	@if(!empty($data->image->path))
 			                    	<a href="#"><img src="{{asset($data->image->path)}}" alt="course_img1"/></a>
