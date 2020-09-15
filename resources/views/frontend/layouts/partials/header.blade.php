@@ -19,8 +19,8 @@
 
 	                        <a href="#" class="btn btn-default animation " data-toggle="modal" data-target="#Login" style="color: #9E9FA3; font-size:12px;">Apply for Course</a>
 	                        <a href="#" class="btn btn-default animation hire_button" data-toggle="modal" data-target="#Login1" style="color: #9E9FA3;  font-size:12px;">Hire Graduates</a>
-	               
-	                      
+
+
 	                    </div>
 	                </div>
 	            </div>
@@ -39,21 +39,21 @@
                 	<!-- <div class="col-lg-5">
                     	<div class="h-100 background_bg radius_ltlb_5" data-img-src="assets/images/ss"></div>
                     </div> -->
-                	<div class="col-lg-12">	
+                	<div class="col-lg-12">
                     	<div class="padding_eight_all new_padding">
                     		<div class="heading_s1 mb-3 apply_header news1 nav-link" >
                                 <h4 >Apply for a course</h4>
                             </div>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel">
-                                    
+
                                     <form  class="login ">
                                         <div class="form-group ">
 
-				                                <input type="text" required="" class="form-control" name="firstname" placeholder="Full Name">
+				                                <input type="text" required="" class="form-control" name="name" placeholder="Full Name">
 				                         </div>
-				               
-				                            
+
+
 				                            <div class="form-group ">
 				                                <input class="form-control" required=""  name="address" placeholder=" Address">
 				                            </div>
@@ -63,10 +63,10 @@
 				                            <div class="form-group ">
 				                                <input type="text" required="" class="form-control" name="phone" placeholder="Phone No.">
 				                            </div>
-				                                        
-				                            
+
+
 				                             <div class="form-group" >
-											    <select class="form-control" required=""    placeholder="Select course"><!-- id="select" -->
+											    <select class="form-control" required="" name="course"    placeholder="Select course"><!-- id="select" -->
 												   <!-- <div class="option"> -->
 												   	<option selected="selected">Select course...</option>
 												   	@foreach(applyform() as $data)
@@ -75,16 +75,16 @@
 												   	@endif
 
 												   	@endforeach
-												    
-												    
+
+
 												   <!-- </div> -->
-												    
-												   
+
+
 												</select>
-											    
+
 											</div>
 				                            <div class="form-group" >
-											    <select class="form-control" required=""    placeholder="Select location"><!-- id="select" -->
+											    <select class="form-control" required="" name="location"   placeholder="Select location"><!-- id="select" -->
 												   <!-- <div class="option"> -->
 												   	<option selected>Select location...</option>
 								s				   	@foreach(applyform() as $data)
@@ -93,20 +93,20 @@
 												   	@endif
 
 												   	@endforeach
-												    
+
 												   <!-- </div> -->
-												    
-												   
+
+
 												</select>
-											    
+
 											</div>
-				                                         
+
 				                            <div class="form-group ">
 				                                <button type="submit" class="btn btn-default btn-block" name="hire">Apply </button>
 				                            </div>
 				                        </form>
                                 </div>
-                                
+
                             </div>
                         </div>
                 	</div>
@@ -123,15 +123,15 @@
                   <span aria-hidden="true">×</span>
                 </button>
                 <div class="row no-gutters">
-                    
-                    <div class="col-lg-12"> 
+
+                    <div class="col-lg-12">
                         <div class="padding_eight_all new_padding">
                             <div class="heading_s1 mb-3 apply_header news1 nav-link" >
                                 <h4 >Hire Graduates</h4>
                             </div>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel">
-                                    
+
                                     <form  class="login ">
                                         <div class="form-group">
                                             <input type="text" required="" class="form-control" name="firstname" placeholder="First Name">
@@ -153,10 +153,10 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="number" required="" class="form-control" name="number" placeholder="No of Graduates" min="1" max="100">
-                                        </div> 
-                                        
-                            
-                                        <div class="form-group col-12">  
+                                        </div>
+
+
+                                        <div class="form-group col-12">
                                                 Graduate:
                                                 		@php
 											            $count=0;
@@ -165,25 +165,24 @@
                                                 		@if(!empty($data->graduate))
                                                 		<input type="checkbox" @if($count==1) style="margin-left: 73px;" @endif >
 
-                                                		
-                                                        <label for="vehicle1" style="color: #666666;"> {{$data-> graduate}}</label><br> 
-                                                        
+
+                                                        <label for="vehicle1" style="color: #666666;"> {{$data-> graduate}}</label><br>
+
                                                         @endif
                                                         @php
 										                $count++;
 										                @endphp
                                                         @endforeach
-                                                        
+
 
                                         </div>
-                                        
-                                        
+
+
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-default btn-block" name="hire">Hire</button>
                                         </div>
-                                    </div>
-                                </form>
-                                
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

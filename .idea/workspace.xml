@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9c3d0ea-04ce-4d43-b857-8f628f54288d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/mail/quick-inquiry.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/mail/quick-registration.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/maw_academy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/maw_academy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/contact/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/contact/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583130537847</updated>
       <workItem from="1583130546974" duration="1573000" />
-      <workItem from="1600164019981" duration="3732000" />
+      <workItem from="1600164019981" duration="5457000" />
     </task>
     <servers />
   </component>
@@ -180,5 +175,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1600164196709" />
+    <state x="379" y="101" width="607" height="536" key="find.popup" timestamp="1600168398374">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="379" y="101" width="607" height="536" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1600168398374" />
   </component>
 </project>

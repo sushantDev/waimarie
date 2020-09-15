@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Mail\ApplyNotifiable;
 use App\Mail\InquiryNotifiable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -244,6 +245,21 @@ class FrontendController extends Controller
         ];
 
         Mail::to('birajanr@gmail.com')->send(new InquiryNotifiable($mailParam));
+        return redirect()->back();
+    }
+
+    public function apply(Request $request)
+    {
+        $mailParam = [
+            'name' => $request->name,
+            'address' => $request->address,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'course' => $request->course,
+            'location' => $request->location
+        ];
+
+        Mail::to('birajanr@gmail.com')->send(new ApplyNotifiable($mailParam));
         return redirect()->back();
 
     }
