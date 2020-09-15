@@ -1,9 +1,9 @@
 <?php
 namespace App\Http\Controllers;
+use App\Mail\InquiryNotifiable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
-use Mail;
 use App\Models\Page;
 use App\Models\News;
 use App\Models\Album;
@@ -19,6 +19,7 @@ use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Traininglocation;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Image;
 use App\Models\Menu;
 
@@ -27,8 +28,8 @@ class FrontendController extends Controller
 {
 	public function homepage()
 	{
-		$program= Service::where('is_published',1)->limit(3)->get();	
-		$history = Page::where('title','History')->where('is_featured',1)->first();		
+		$program= Service::where('is_published',1)->limit(3)->get();
+		$history = Page::where('title','History')->where('is_featured',1)->first();
 		$post =  Post::where('is_published',1)->get();
 		$slider = Slider::where('is_published', 1)->get();
         $setting = Setting::where('slug', '=', 'logo')->get();
@@ -39,9 +40,9 @@ class FrontendController extends Controller
 
 	public function history()
 	{
-		$history = Page::where('title','History')->first();	
+		$history = Page::where('title','History')->first();
 		return view('frontend.about.history',compact('history'));
-		
+
 	}
 
 	public function hiregraduates()
@@ -56,9 +57,9 @@ class FrontendController extends Controller
 	{
 
 		$text =Page::where('title','Overview')->first();
-		$logo =Photo::where('view','employers')->get();	
+		$logo =Photo::where('view','employers')->get();
 		return view('frontend.employers.empoverview',compact('text','logo'));
-		
+
 	}
 
 
@@ -81,7 +82,7 @@ class FrontendController extends Controller
 		$logoimplement = Photo::where('view','implementing partner')->get();
 		$logofund = Photo::where('view','funding partner')->get();
 		return view('frontend.partners.partner',compact('logofund','logoimplement','logogovernment'));
-		
+
 	}
 
 
@@ -93,7 +94,7 @@ class FrontendController extends Controller
     }
 
     public function gallery($id)
-    {       
+    {
         $album = Album::with('Photos')->find($id);
         $albums = Album::with('Photos')->get();
         return view('frontend.album.gallery', compact( 'album', 'albums'));
@@ -104,7 +105,7 @@ class FrontendController extends Controller
 	public function leadership()
 	{
 		$leadership = Team::where('view','leadership')->get();
-		
+
 		return view('frontend.about.leadership',compact('leadership'));
 	}
 
@@ -112,7 +113,7 @@ class FrontendController extends Controller
 	public function team()
 	{
 		$team = Team::where('view','team')->get();
-		
+
 		return view('frontend.about.team',compact('team'));
 	}
 
@@ -129,7 +130,7 @@ class FrontendController extends Controller
 	{
 		$technical = Page::where('view','technical-advisory')->first();
 		$teamtechnical = Team::where('view','technical-advisory')->get();
-		
+
 		return view('frontend.about.technical',compact('teamtechnical','technical'));
 	}
 	public function messageofgreeting()
@@ -146,13 +147,13 @@ class FrontendController extends Controller
 
             $service = Service::where('slug', $slug)->first();
             $services = Service::where('is_published', 1)->limit(4)->whereNotIn('id',[$service->id])->get();
-            return view('frontend.programs.program-detail',compact('services','service'));   
+            return view('frontend.programs.program-detail',compact('services','service'));
 		}
 		else
 		{
 			$services = Service::where('is_published', 1)->get();
 			return view('frontend.programs.program',compact('services'));
-		}     	
+		}
 
 	}
 	public function services($brand=null,$slug=null)
@@ -161,23 +162,23 @@ class FrontendController extends Controller
 		if($brand){
 
 
-			if ($slug) 
+			if ($slug)
 				{
 					$brands =  Brand::where('brand', $brand)->first();
 		            $service = Service::where('slug', $slug)->where('brand_id',[$brands->id])->first();
 		            $services = Service::where('is_published', 1)->whereIn('brand_id',[$brands->id])->limit(4)->whereNotIn('id',[$service->id])->get();
-		            return view('frontend.service.service-detail',compact('services','service','brands')); 
-				} 
+		            return view('frontend.service.service-detail',compact('services','service','brands'));
+				}
 
 				else{
 					$brands =  Brand::where('brand', $brand)->first();
 					$servicelist = Service::where('is_published', 1)->where('brand_id',[$brands->id])->get();
 					return view('frontend.service.service-list',compact('servicelist','brands'));
-				  
 
-				} 
 
-			
+				}
+
+
 		}
 
 		else
@@ -186,7 +187,7 @@ class FrontendController extends Controller
 
 
 		}
-		
+
 
 	}
 	public function news($slug=null)
@@ -195,13 +196,13 @@ class FrontendController extends Controller
 
             $news = News::where('slug', $slug)->first();
             $newses = News::where('is_published', 1)->limit(4)->whereNotIn('id',[$news->id])->get();
-            return view('frontend.news.news-detail',compact('news','newses'));   
+            return view('frontend.news.news-detail',compact('news','newses'));
 		}
 		else
 		{
 			$newses = News::where('is_published', 1)->get();
 			return view('frontend.news.news-list',compact('newses'));
-		}     	
+		}
 
 	}
 
@@ -226,36 +227,51 @@ class FrontendController extends Controller
 	}
 
 	public function locations()
-	{	
+	{
         $training = Traininglocation::where('is_published',1)->get();
 
 		return view('frontend.about.traininglocation',compact('training'));
 	}
-	
-	
+
+    public function inquiry(Request $request)
+    {
+        $mailParam = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'subject' => $request->subject,
+            'message' => $request->message
+        ];
+
+        Mail::to('birajanr@gmail.com')->send(new InquiryNotifiable($mailParam));
+        return redirect()->back();
+
+    }
+
+
 	public function contact()
-	{	
+	{
         $setting = Setting::where('slug', '=', 'logo')->first();
 
 		return view('frontend.contact.contact',compact('setting'));
 	}
-	
+
  public function page($slug = null)
     {
         if ($slug) {
             $page = Page::where('slug', '=', $slug)->where('is_published', 1)->first();
             if ($page) {
-               
+
                     return view('frontend.default', compact('page'));
                 }
             } else {
                 return view('frontend.partials.errors');
             }
 
-        
-    }	
 
-  
+    }
+
+
 }
 
 

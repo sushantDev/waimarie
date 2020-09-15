@@ -20,7 +20,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('setting', 'SettingController@index')->name('setting.index');
     Route::put('setting/update', 'SettingController@update')->name('setting.update');
-    
+
      Route::group(['as' => 'home.', 'prefix' => 'home'], function () {
         Route::get('', 'HomeController@index')->name('home');
         Route::get('create', 'HomeController@create')->name('create');
@@ -139,7 +139,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 
 
-   
+
     /*
   |--------------------------------------------------------------------------
   | BrandController CRUD Routes
@@ -159,7 +159,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
   | Product Controller CRUD Routes
   |--------------------------------------------------------------------------
   */
- 
+
 
     Route::group([ 'as' => 'service.', 'prefix' => 'service' ], function () {
       Route::get('{brand}', 'ServiceController@index')->name('index');
@@ -170,10 +170,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
       Route::delete('{service}', 'ServiceController@destroy')->name('destroy');
   });
 
-       
 
-       
-  
+
+
+
         //download file
         Route::group([ 'as' => 'download.', 'prefix' => 'download' ], function ()
         {
@@ -190,7 +190,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         |--------------------------------------------------------------------------
         | Photo CRUD Routes
         |--------------------------------------------------------------------------
-        */  
+        */
          Route::group([ 'as' => 'photo.', 'prefix' => 'photo' ], function ()
         {
             Route::get('', 'PhotoController@index')->name('index');
@@ -205,7 +205,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         |--------------------------------------------------------------------------
         | Form CRUD Routes
         |--------------------------------------------------------------------------
-        */  
+        */
          Route::group([ 'as' => 'form.', 'prefix' => 'form' ], function ()
         {
             Route::get('', 'FormController@index')->name('index');
@@ -216,9 +216,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::delete('{form}', 'FormController@destroy')->name('destroy');
 
         });
-       
 
-       
+
+
 
   /*
     |--------------------------------------------------------------------------
@@ -268,4 +268,5 @@ Route::get('/album', array('as' => 'album','uses' => 'FrontendController@album')
 Route::get('/gallery/{id}', array('as' => 'show_album_view','uses' => 'FrontendController@gallery'));
 Route::get('/document', 'FrontendController@document')->name('document');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
+Route::post('/inquiry', 'FrontendController@inquiry')->name('contact.inquiry');
 Route::get('{any}', 'FrontendController@page')->name('page');

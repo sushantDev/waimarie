@@ -10,7 +10,7 @@ PAGE JS
 
 (function($) {
 	'use strict';
-	
+
 	/*===================================*
 	01. LOADING JS
 	/*===================================*/
@@ -42,7 +42,7 @@ PAGE JS
           }
         }
     });
-	
+
 	$(window).on("load resize ready",function () {
 		$(".header_wrap.fixed-top").css({"padding-top": $(".alertbox").height() });
 	})
@@ -55,7 +55,7 @@ PAGE JS
 			$('.alertbox').addClass('alert_fixed');
 		}
 	});
-	
+
 	/*===================================*
 	03. MENU JS
 	*===================================*/
@@ -72,8 +72,8 @@ PAGE JS
 	    }
 
 	});
-	
-	//Show Hide dropdown-menu Main navigation 
+
+	//Show Hide dropdown-menu Main navigation
 	$( document ).ready( function () {
 		$( '.dropdown-menu a.dropdown-toggler' ).on( 'click', function ( e ) {
 			var $el = $( this );
@@ -83,17 +83,17 @@ PAGE JS
 			}
 			var $subMenu = $( this ).next( ".dropdown-menu" );
 			$subMenu.toggleClass( 'show' );
-			
+
 			$( this ).parent( "li" ).toggleClass( 'show' );
-	
+
 			$( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
 				$( '.dropdown-menu .show' ).removeClass( "show" );
 			} );
-			
+
 			return false;
 		});
 	});
-	
+
 	//Hide Navbar Dropdown After Click On Links
 	var navBar = $(".header_wrap");
 	var navbarLinks = navBar.find(".navbar-collapse ul li a.page-scroll");
@@ -108,12 +108,12 @@ PAGE JS
         });
 
     });
-	
+
 	//Main navigation Active Class Add Remove
 	$('.navbar-toggler').on('click', function() {
 		$("header").toggleClass("active");
-	});	
-	
+	});
+
 	$(window).on("load resize ready",function () {
 	function getClass(element, startsWith) {
 
@@ -145,7 +145,7 @@ PAGE JS
 		$(".search-overlay").toggleClass('open');
 		$(".search_trigger").toggleClass('open');
 	});
-	
+
 	/*===================================*
 	05. SLIDER JS
 	*===================================*/
@@ -173,7 +173,7 @@ PAGE JS
 			});
 		});
 	});
-	
+
 	/*===================================*
 	06. PORTFOLIO JS
 	*===================================*/
@@ -190,7 +190,7 @@ PAGE JS
 					},
 					filter: "*"
 				});
-			} 
+			}
 			else {
 				$grid_selectors.isotope({
 					itemSelector: '.grid_item',
@@ -200,7 +200,7 @@ PAGE JS
 			}
 		});
 	}
-            
+
 	//isotope filter
 	$(document).on( "click", filter_selectors, function() {
 		$(filter_selectors).removeClass("current");
@@ -215,7 +215,7 @@ PAGE JS
 				},
 				filter: dfselector
 			});
-		} 
+		}
 		else {
 			$grid_selectors.isotope({
 				itemSelector: '.grid_item',
@@ -225,7 +225,7 @@ PAGE JS
 		}
 		return false;
 	});
-	
+
 
 	$(window).resize(function () {
 		$grid_selectors.ready(function () {
@@ -235,7 +235,7 @@ PAGE JS
 			}, 300);
 		});
 	});
-	
+
 	$('.grid_item .image_popup').on('click', function () {
 		$(this).find('.link_container').magnificPopup('open');
 	});
@@ -248,7 +248,7 @@ PAGE JS
 			}
 		});
 	});
-	 
+
 	/*===================================*
      07.COUNTDOWN JS
     *===================================*/
@@ -258,41 +258,41 @@ PAGE JS
             $(this).html(tm.strftime('<span class="countdown_box"><span class="countdown days">%D </span><span class="cd_text">Days</span></span><span class="countdown_box"><span class="countdown hours">%H</span><span class="cd_text">Hours</span></span><span class="countdown_box"><span class="countdown minutes">%M</span><span class="cd_text">Minutes</span></span><span class="countdown_box"><span class="countdown seconds">%S</span><span class="cd_text">Seconds</span></span>'));
         });
     });
-	
+
 	/*===================================*
 	08. CONTACT FORM JS
 	*===================================*/
-	$("#submitButton").on("click", function(event) {
-	    event.preventDefault();
-	    var mydata = $("form").serialize();
-	    $.ajax({
-	        type: "POST",
-	        dataType: "json",
-	        url: "contact.php",
-	        data: mydata,
-	        success: function(data) {
-	            if (data.type === "error") {
-	                $("#alert-msg").removeClass("alert-msg-success");
-	                $("#alert-msg").addClass("alert-msg-failure");
-	            } else {
-	                $("#alert-msg").addClass("alert-msg-success");
-	                $("#alert-msg").removeClass("alert-msg-failure");
-	                $("#first-name").val("Enter Name");
-	                $("#email").val("Enter Email");
-					$("#phone").val("Enter Phone Number");
-	                $("#subject").val("Enter Subject");
-	                $("#description").val("Enter Message");
+	// $("#submitButton").on("click", function(event) {
+	//     event.preventDefault();
+	//     var mydata = $("form").serialize();
+	//     $.ajax({
+	//         type: "POST",
+	//         dataType: "json",
+	//         url: "contact.php",
+	//         data: mydata,
+	//         success: function(data) {
+	//             if (data.type === "error") {
+	//                 $("#alert-msg").removeClass("alert-msg-success");
+	//                 $("#alert-msg").addClass("alert-msg-failure");
+	//             } else {
+	//                 $("#alert-msg").addClass("alert-msg-success");
+	//                 $("#alert-msg").removeClass("alert-msg-failure");
+	//                 $("#first-name").val("Enter Name");
+	//                 $("#email").val("Enter Email");
+	// 				$("#phone").val("Enter Phone Number");
+	//                 $("#subject").val("Enter Subject");
+	//                 $("#description").val("Enter Message");
+    //
+	//             }
+	//             $("#alert-msg").html(data.msg);
+	//             $("#alert-msg").show();
+	//         },
+	//         error: function(xhr, textStatus) {
+	//             alert(textStatus);
+	//         }
+	//     });
+	// });
 
-	            }
-	            $("#alert-msg").html(data.msg);
-	            $("#alert-msg").show();
-	        },
-	        error: function(xhr, textStatus) {
-	            alert(textStatus);
-	        }
-	    });
-	});
-	
 	/*===================================*
 	09. SCROLLUP JS
 	*===================================*/
@@ -303,7 +303,7 @@ PAGE JS
 			$('.scrollup').fadeOut();
 		}
 	});
-	
+
 	$(".scrollup").on('click', function (e) {
 		e.preventDefault();
 		$('html, body').animate({
@@ -311,7 +311,7 @@ PAGE JS
 		}, 600);
 		return false;
 	});
-	
+
 	/*===================================*
 	10. POPUP JS
 	*===================================*/
@@ -320,7 +320,7 @@ PAGE JS
 		preloader: true,
 		mainClass: 'mfp-zoom'
 	});
-	
+
 	$('.image_gallery').each(function() { // the containers for all your galleries
 		$(this).magnificPopup({
 			delegate: 'a', // the selector for gallery item
@@ -337,7 +337,7 @@ PAGE JS
 			}
 		});
 	});
-	
+
 	$(document).ready(function() {
 		$('.popup-ajax').magnificPopup({
 			type: 'ajax',
@@ -356,27 +356,27 @@ PAGE JS
 			fixedContentPos: false
 		});
 	});
-	
+
 	/*===================================*
 	12. ANIMATION JS
 	*===================================*/
 	$(function() {
-	
+
 		function ckScrollInit(items, trigger) {
 			items.each(function() {
 				var ckElement = $(this),
 					AnimationClass = ckElement.attr('data-animation'),
 					AnimationDelay = ckElement.attr('data-animation-delay');
-	
+
 				ckElement.css({
 					'-webkit-animation-delay': AnimationDelay,
 					'-moz-animation-delay': AnimationDelay,
 					'animation-delay': AnimationDelay,
 					opacity: 0
 				});
-	
+
 				var ckTrigger = (trigger) ? trigger : ckElement;
-	
+
 				ckTrigger.waypoint(function() {
 					ckElement.addClass("animated").css("opacity", "1");
 					ckElement.addClass('animated').addClass(AnimationClass);
@@ -386,12 +386,12 @@ PAGE JS
 				});
 			});
 		}
-	
+
 		ckScrollInit($('.animation'));
 		ckScrollInit($('.staggered-animation'), $('.staggered-animation-wrap'));
-	
+
 	});
-	
+
 	/*===================================*
 	13. BACKGROUND IMAGE JS
 	*===================================*/
@@ -404,7 +404,7 @@ PAGE JS
 			$(this).css('background-size', 'cover');
 		}
 	});
-	
+
 	/*===================================*
 	14. PROGRESS BAR JS
 	*===================================*/
@@ -414,7 +414,7 @@ PAGE JS
 				return $(this).attr("aria-valuenow") + "%";
 			}
 		)
-	
+
 		$('.count_pr').css("left",
 			function() {
 				return $(this).attr("data-percent") + "%";
@@ -428,20 +428,20 @@ PAGE JS
 	$('.counter').counterUp({
 		time: 1500
 	});
-	
-	
+
+
 	/*===================================*
 	16. PARALLAX JS
 	*===================================*/
 	$(window).on('load', function() {
         $('.parallax_bg').parallaxBackground();
 	});
-	
+
 	/*===================================*
 	17. RATING STAR JS
 	*===================================*/
 	/*$(document).ready(function(){
-	  
+
 	  $('.rating span').on('click', function(){
 			var onStar = parseFloat($(this).data('value'), 10); // The star currently selected
 			var stars = $(this).parent().children('.rating span');
@@ -453,7 +453,7 @@ PAGE JS
 			}
 		});
 	});
-	
+
 	//Demo js
 	$( window ).on( "load", function() {
 		document.onkeydown = function(e) {
@@ -469,21 +469,21 @@ PAGE JS
 			if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
 			 return false;
 			}
-		
+
 			if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
 			 return false;
-			}      
+			}
 		 }
-		 
+
 		$("html").on("contextmenu",function(){
 			return false;
 		});
 	});*/
-	
+
 	/*===================================*
 	DEMO SWITCHER JS
 	*===================================*/
-	
+
 	$(document).ready( function() {
 		$(window).on("load", function() {
 			$('body').prepend('<div id="demo_content" class="demo_switcher"></div>');
