@@ -269,5 +269,5 @@ Route::get('/gallery/{id}', array('as' => 'show_album_view','uses' => 'FrontendC
 Route::get('/document', 'FrontendController@document')->name('document');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::post('/inquiry', 'FrontendController@inquiry')->name('contact.inquiry');
-Route::post('/apply', 'FrontendController@apply')->name('apply');
+Route::post('/apply', 'FrontendController@apply')->name('contact.apply');
 Route::get('{any}', 'FrontendController@page')->name('page');

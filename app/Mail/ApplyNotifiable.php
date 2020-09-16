@@ -18,9 +18,9 @@ class ApplyNotifiable extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(array $apply)
     {
-        //
+        $this->apply = $apply;
     }
 
     /**
@@ -30,6 +30,13 @@ class ApplyNotifiable extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from($this->apply['email'], $this->apply['name'])
+            ->view('frontend.mail.quick-apply')
+            ->subject('Apply Course Email')
+            ->with(['apply_address' => $this->apply['address'],
+                'apply_phone' =>$this->apply['phone'],
+                'apply_course' =>$this->apply['course'],
+                'apply_location' =>$this->apply['location']
+                ]);
     }
 }
