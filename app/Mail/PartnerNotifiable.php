@@ -35,7 +35,10 @@ class PartnerNotifiable extends Mailable
             ->with(['partner_businessName' => $this->partner['businessName'],
                 'partner_businessAddress' =>$this->partner['businessAddress'],
                 'partner_phone' =>$this->partner['phone'],
-                'partner_message' =>$this->partner['message']
+                'partner_message' =>$this->partner['message'],
+                'partner_email' =>$this->partner['email'],
+                'partner_firstName' =>$this->partner['firstName'],
+                'partner_lastName' =>$this->partner['lastName'],
             ]);
     }
 }

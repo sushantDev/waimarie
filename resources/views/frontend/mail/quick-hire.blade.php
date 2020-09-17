@@ -351,23 +351,50 @@
                                 </thead>
                                 <tr>
                                     <td>
-                                        <p>{{$hire_businessName}}
+                                        <p>First Name: {{$hire_firstName}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$hire_businessAddress}}
+                                        <p>Last Name: {{$hire_lastName}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$hire_phone}}
+                                        <p>Name of Business: {{$hire_businessName}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$hire_graduatesNumber}}
+                                        <p>Business Address: {{$hire_businessAddress}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$hire_graduate}}
+                                        <p>Email: {{$hire_email}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Phone No. : {{$hire_phone}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>No. of Graduates: {{$hire_graduatesNumber}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Graduate: @foreach( $hire_graduate as $graduate) {{rtrim($graduate.',')}}
+                                                         @endforeach
                                         </p>
                                     </td>
                                 </tr>

@@ -145,7 +145,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel">
 
-                                    <form action="{{route('contact.hire')}}" method="post" class="login ">
+                                    <form action="{{route('contact.hire')}}" method="post" class="login" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-group">
                                             <input type="text" required="" class="form-control" name="firstName"
@@ -184,7 +184,7 @@
                                             @endphp
                                             @foreach(hireform() as $data)
                                                 @if(!empty($data->graduate))
-                                                    <input type="checkbox" name="graduate"
+                                                    <input type="checkbox" name="graduate[]" value="{{$data->graduate}}"
                                                            @if($count==1) style="margin-left: 73px;" @endif >
 
 

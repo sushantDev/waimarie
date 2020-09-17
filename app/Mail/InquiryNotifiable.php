@@ -33,6 +33,11 @@ class InquiryNotifiable extends Mailable
         return $this->from($this->inquiry['email'], $this->inquiry['name'])
             ->view('frontend.mail.quick-inquiry')
             ->subject('Inquiry Email')
-            ->with(['inquiry_message' => $this->inquiry['message'], 'inquiry_subject' =>$this->inquiry['subject']]);
+            ->with(['inquiry_message' => $this->inquiry['message'],
+                'inquiry_subject' =>$this->inquiry['subject'],
+                'inquiry_name' =>$this->inquiry['name'],
+                'inquiry_email' =>$this->inquiry['email'],
+                'inquiry_phone' =>$this->inquiry['phone']
+                ]);
     }
 }

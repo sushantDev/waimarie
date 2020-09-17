@@ -37,6 +37,9 @@ class HireNotifiable extends Mailable
                 'hire_phone' =>$this->hire['phone'],
                 'hire_graduatesNumber' =>$this->hire['graduatesNumber'],
                 'hire_graduate' =>$this->hire['graduate'],
+                'hire_email' =>$this->hire['email'],
+                'hire_firstName' =>$this->hire['firstName'],
+                'hire_lastName' =>$this->hire['lastName']
             ]);
     }
 }

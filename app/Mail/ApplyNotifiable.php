@@ -36,7 +36,9 @@ class ApplyNotifiable extends Mailable
             ->with(['apply_address' => $this->apply['address'],
                 'apply_phone' =>$this->apply['phone'],
                 'apply_course' =>$this->apply['course'],
-                'apply_location' =>$this->apply['location']
+                'apply_location' =>$this->apply['location'],
+                'apply_name' =>$this->apply['name'],
+                'apply_email' =>$this->apply['email']
                 ]);
     }
 }

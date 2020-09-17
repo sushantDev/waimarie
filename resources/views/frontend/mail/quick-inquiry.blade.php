@@ -351,11 +351,31 @@
                                 </thead>
                                 <tr>
                                     <td>
-                                        <p>{{$inquiry_subject}}
+                                        <p>Name: {{$inquiry_name}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$inquiry_message}}
+                                        <p>Email: {{$inquiry_email}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Phone No. : {{$inquiry_phone}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Subject: {{$inquiry_subject}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Message: {{$inquiry_message}}
                                         </p>
                                     </td>
                                 </tr>

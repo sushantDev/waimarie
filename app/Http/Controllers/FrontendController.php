@@ -246,7 +246,7 @@ class FrontendController extends Controller
             'message' => $request->message
         ];
 
-        Mail::to('masd@mawnepal.com')->send(new InquiryNotifiable($mailParam));
+        Mail::to('birajanr@gamil.com')->send(new InquiryNotifiable($mailParam));
         return redirect()->back();
     }
 
@@ -261,13 +261,14 @@ class FrontendController extends Controller
             'location' => $request->location
         ];
 
-        Mail::to('masd@mawnepal.com')->send(new ApplyNotifiable($mailParam));
+        Mail::to('birajanr@gmail.com')->send(new ApplyNotifiable($mailParam));
         return redirect()->back();
 
     }
 
     public function hire(Request $request)
     {
+
         $mailParam = [
             'firstName' => $request->firstName,
             'lastName' => $request->lastName,
@@ -279,7 +280,8 @@ class FrontendController extends Controller
             'graduate' => $request->graduate
         ];
 
-        Mail::to('masd@mawnepal.com')->send(new HireNotifiable($mailParam));
+//        dd($mailParam['graduate']);
+        Mail::to('birajanr@gmail.com')->send(new HireNotifiable($mailParam));
         return redirect()->back();
 
     }
@@ -296,7 +298,7 @@ class FrontendController extends Controller
             'message' => $request->message
         ];
 
-        Mail::to('masd@mawnepal.com')->send(new PartnerNotifiable($mailParam));
+        Mail::to('birajanr@gmail.com')->send(new PartnerNotifiable($mailParam));
         return redirect()->back();
 
     }

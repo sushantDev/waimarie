@@ -351,19 +351,43 @@
                                 </thead>
                                 <tr>
                                     <td>
-                                        <p>{{$partner_businessName}}
+                                        <p>First Name: {{$partner_firstName}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$partner_businessAddress}}
+                                        <p>Last Name: {{$partner_lastName}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$partner_phone}}
+                                        <p>Name of Business: {{$partner_businessName}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$partner_message}}
+                                        <p>Business Address: {{$partner_businessAddress}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Email: {{$partner_email}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Phone No. : {{$partner_phone}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Message: {{$partner_message}}
                                         </p>
                                     </td>
                                 </tr>

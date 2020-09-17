@@ -351,19 +351,37 @@
                                 </thead>
                                 <tr>
                                     <td>
-                                        <p>{{$apply_address}}
+                                        <p>Full Name: {{$apply_name}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$apply_phone}}
+                                        <p>Address: {{$apply_address}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$apply_course}}
+                                        <p>Email: {{$apply_email}}
                                         </p>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
-                                        <p>{{$apply_location}}
+                                        <p>Phone No. : {{$apply_phone}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Select Course: {{$apply_course}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Select Location: {{$apply_location}}
                                         </p>
                                     </td>
                                 </tr>
