@@ -346,24 +346,24 @@
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Apply Course Message</th>
+                                    <th>Partner with Academy Message</th>
                                 </tr>
                                 </thead>
                                 <tr>
                                     <td>
-                                        <p>{{$apply_address}}
+                                        <p>{{$partner_businessName}}
                                         </p>
                                     </td>
                                     <td>
-                                        <p>{{$apply_phone}}
+                                        <p>{{$partner_businessAddress}}
                                         </p>
                                     </td>
                                     <td>
-                                        <p>{{$apply_course}}
+                                        <p>{{$partner_phone}}
                                         </p>
                                     </td>
                                     <td>
-                                        <p>{{$apply_location}}
+                                        <p>{{$partner_message}}
                                         </p>
                                     </td>
                                 </tr>

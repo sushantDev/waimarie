@@ -270,4 +270,6 @@ Route::get('/document', 'FrontendController@document')->name('document');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::post('/inquiry', 'FrontendController@inquiry')->name('contact.inquiry');
 Route::post('/apply', 'FrontendController@apply')->name('contact.apply');
+Route::post('/hire', 'FrontendController@hire')->name('contact.hire');
+Route::post('/partner', 'FrontendController@partner')->name('contact.partner');
 Route::get('{any}', 'FrontendController@page')->name('page');

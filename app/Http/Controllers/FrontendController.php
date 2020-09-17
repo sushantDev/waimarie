@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 use App\Mail\ApplyNotifiable;
+use App\Mail\HireNotifiable;
 use App\Mail\InquiryNotifiable;
+use App\Mail\PartnerNotifiable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -244,7 +246,7 @@ class FrontendController extends Controller
             'message' => $request->message
         ];
 
-        Mail::to('birajanr@gmail.com')->send(new InquiryNotifiable($mailParam));
+        Mail::to('masd@mawnepal.com')->send(new InquiryNotifiable($mailParam));
         return redirect()->back();
     }
 
@@ -259,7 +261,42 @@ class FrontendController extends Controller
             'location' => $request->location
         ];
 
-        Mail::to('birajanr@gmail.com')->send(new ApplyNotifiable($mailParam));
+        Mail::to('masd@mawnepal.com')->send(new ApplyNotifiable($mailParam));
+        return redirect()->back();
+
+    }
+
+    public function hire(Request $request)
+    {
+        $mailParam = [
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
+            'businessName' => $request->businessName,
+            'businessAddress' => $request->businessAddress,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'graduatesNumber' => $request->graduatesNumber,
+            'graduate' => $request->graduate
+        ];
+
+        Mail::to('masd@mawnepal.com')->send(new HireNotifiable($mailParam));
+        return redirect()->back();
+
+    }
+
+    public function partner(Request $request)
+    {
+        $mailParam = [
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
+            'businessName' => $request->businessName,
+            'businessAddress' => $request->businessAddress,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'message' => $request->message
+        ];
+
+        Mail::to('masd@mawnepal.com')->send(new PartnerNotifiable($mailParam));
         return redirect()->back();
 
     }

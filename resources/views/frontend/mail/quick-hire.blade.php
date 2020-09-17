@@ -346,24 +346,28 @@
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Apply Course Message</th>
+                                    <th>Hire Graduates Message</th>
                                 </tr>
                                 </thead>
                                 <tr>
                                     <td>
-                                        <p>{{$apply_address}}
+                                        <p>{{$hire_businessName}}
                                         </p>
                                     </td>
                                     <td>
-                                        <p>{{$apply_phone}}
+                                        <p>{{$hire_businessAddress}}
                                         </p>
                                     </td>
                                     <td>
-                                        <p>{{$apply_course}}
+                                        <p>{{$hire_phone}}
                                         </p>
                                     </td>
                                     <td>
-                                        <p>{{$apply_location}}
+                                        <p>{{$hire_graduatesNumber}}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>{{$hire_graduate}}
                                         </p>
                                     </td>
                                 </tr>

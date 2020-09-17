@@ -12,30 +12,30 @@
 	                <nav aria-label="breadcrumb">
 	                  <ol class="breadcrumb justify-content-sm-end">
 	                    <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
-	                    
+
 	                  </ol>
 	                </nav>
 	            </div>
 	        </div>
-	    </div> 
+	    </div>
 </section>
 
 <section>
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                
+
                 <div class="row">
                     <div class="single_event">
-                    
+
                         <div class="event_title">
                             <div class="row align-items-end">
                                 <div class="col-md-8">
                                     @if(!empty($page->title))
                                     <h2>{{$page->title}}</h2>
-                                    @endif                                                                
+                                    @endif
                                 </div>
-                                
+
                             </div>
                         </div>
                         @if(!empty($page->content))
@@ -45,11 +45,11 @@
                                     <p> {!! $page->content !!}</p>
                                 </div>
                             </div>
-                        </div>    
-                        @endif                    
-                    
+                        </div>
+                        @endif
+
                     </div>
-                    
+
                 </div>
                 <div class="row">
                     <ul class="list_none header_list border_list ml-1">
@@ -82,26 +82,27 @@
                     <!-- <div class="col-lg-5">
                         <div class="h-100 background_bg radius_ltlb_5" data-img-src="assets/images/ss"></div>
                     </div> -->
-                    <div class="col-lg-12"> 
+                    <div class="col-lg-12">
                         <div class="padding_eight_all new_padding">
                             <div class="heading_s1 mb-3 apply_header news1 nav-link" >
                                 <h4 >Partner with Academy</h4>
                             </div>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel">
-                                    
-                                    <form class="login ">
+
+                                    <form action="{{route('contact.partner')}}" method="post" class="login ">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="text" required="" class="form-control" name="firstname" placeholder="First Name">
+                                            <input type="text" required="" class="form-control" name="firstName" placeholder="First Name">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" required="" class="form-control" name="lastname" placeholder="Last Name">
+                                            <input type="text" required="" class="form-control" name="lastName" placeholder="Last Name">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" required=""  name="businessname" placeholder="Name of Business">
+                                            <input class="form-control" required=""  name="businessName" placeholder="Name of Business">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" required=""  name="businessaddress" placeholder="Business Address">
+                                            <input class="form-control" required=""  name="businessAddress" placeholder="Business Address">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" required="" class="form-control" name="email" placeholder="Email">
@@ -109,17 +110,17 @@
                                         <div class="form-group">
                                             <input type="text" required="" class="form-control" name="phone" placeholder="Phone No.">
                                         </div>
-                                        
-                                        
+
+
                                         <div class="form-group">
                                             <textarea rows="3" cols="50" required="" class="form-control" name="message" placeholder="Enter your message"></textarea>
                                         </div>
-                                        
+
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default btn-block" name="hire">Partner with us</button>
+                                            <button type="submit" class="btn btn-default btn-block" name="submit">Partner with us</button>
                                         </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -143,7 +144,7 @@
     });
 });
 
-    
+
 </script>
 
 @endpush

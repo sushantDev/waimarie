@@ -113,7 +113,7 @@
                                         </div>
 
                                         <div class="form-group ">
-                                            <button type="submit" class="btn btn-default btn-block" id="submitButton" name="submit" name="hire">
+                                            <button type="submit" class="btn btn-default btn-block" id="submitButton" name="submit">
                                                 Apply
                                             </button>
                                         </div>
@@ -145,21 +145,22 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="login" role="tabpanel">
 
-                                    <form class="login ">
+                                    <form action="{{route('contact.hire')}}" method="post" class="login ">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="text" required="" class="form-control" name="firstname"
+                                            <input type="text" required="" class="form-control" name="firstName"
                                                    placeholder="First Name">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" required="" class="form-control" name="lastname"
+                                            <input type="text" required="" class="form-control" name="lastName"
                                                    placeholder="Last Name">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" required="" name="businessname"
+                                            <input class="form-control" required="" name="businessName"
                                                    placeholder="Name of Business">
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" required="" name="businessaddress"
+                                            <input class="form-control" required="" name="businessAddress"
                                                    placeholder="Business Address">
                                         </div>
                                         <div class="form-group">
@@ -171,7 +172,7 @@
                                                    placeholder="Phone No.">
                                         </div>
                                         <div class="form-group">
-                                            <input type="number" required="" class="form-control" name="number"
+                                            <input type="number" required="" class="form-control" name="graduatesNumber"
                                                    placeholder="No of Graduates" min="1" max="100">
                                         </div>
 
@@ -183,7 +184,7 @@
                                             @endphp
                                             @foreach(hireform() as $data)
                                                 @if(!empty($data->graduate))
-                                                    <input type="checkbox"
+                                                    <input type="checkbox" name="graduate"
                                                            @if($count==1) style="margin-left: 73px;" @endif >
 
 
@@ -201,7 +202,8 @@
 
 
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default btn-block" name="hire">Hire
+                                            <button type="submit" class="btn btn-default btn-block" name="submit">
+                                                Hire
                                             </button>
                                         </div>
                                     </form>
