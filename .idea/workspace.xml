@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e9c3d0ea-04ce-4d43-b857-8f628f54288d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/ApplyNotifiable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ApplyNotifiable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/HireNotifiable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/HireNotifiable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/InquiryNotifiable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/InquiryNotifiable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/PartnerNotifiable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/PartnerNotifiable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/quick-apply.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/mail/quick-apply.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/quick-hire.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/mail/quick-hire.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/quick-inquiry.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/mail/quick-inquiry.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/mail/quick-partner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/mail/quick-partner.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +153,8 @@
       <workItem from="1583130546974" duration="1573000" />
       <workItem from="1600164019981" duration="5457000" />
       <workItem from="1600230609453" duration="5871000" />
-      <workItem from="1600316131254" duration="19149000" />
+      <workItem from="1600316131254" duration="19567000" />
+      <workItem from="1600402281056" duration="2892000" />
     </task>
     <servers />
   </component>

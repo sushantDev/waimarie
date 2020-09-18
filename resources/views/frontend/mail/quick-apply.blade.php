@@ -375,13 +375,13 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <p>Select Course: {{$apply_course}}
+                                        <p>Course: {{$apply_course}}
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <p>Select Location: {{$apply_location}}
+                                        <p>Location: {{$apply_location}}
                                         </p>
                                     </td>
                                 </tr>
