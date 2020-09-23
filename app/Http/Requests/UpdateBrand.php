@@ -26,7 +26,7 @@ class UpdateBrand extends FormRequest
           {
               return [
                   'title'   => 'required',
-                  'order'   => 'required',
+//                  'order'   => 'required',
               ];
           }
 

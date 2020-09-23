@@ -34,9 +34,9 @@ class StoreService extends FormRequest
          public function data()
          {
              $data = [
-                 'brand_id'          => $this->brand,
+                 'brand_id'          => $this->get('brand_id'),
                  'title'            => $this->get('title'),
-                 'sub_description'  => $this->get('sub_description'),                
+                 'sub_description'  => $this->get('sub_description'),
                  'content'          => $this->get('content'),
                  'is_featured'      => $this->get('is_featured')? $this->get('is_featured') : 0,
                  'is_published'     => $this->has('publish')

@@ -5,7 +5,7 @@
 @section('content')
     <section>
         <div class="section-body">
-            {{ Form::model($service, ['route' =>['service.update', $service->slug],'class'=>'form form-validate','role'=>'form', 'files'=>true, 'novalidate']) }}
+            {{ Form::model($service, ['route' =>['service.update', $service],'class'=>'form form-validate','role'=>'form', 'files'=>true, 'novalidate']) }}
             {{ method_field('PUT') }}
             @include('backend.service.partials.form', ['header' => 'Edit program <span class="text-primary">('.str_limit($service->title, 47).')</span>'])
             {{ Form::close() }}

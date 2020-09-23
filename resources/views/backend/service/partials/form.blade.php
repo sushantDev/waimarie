@@ -5,7 +5,7 @@
     <div class="col-sm-8">
         <div class="card">
             <div class="card-head">
-               
+
                 <header>{!! $header !!}</header>
                 <div class="tools visible-xs">
                     <a class="btn btn-default btn-ink" onclick="history.go(-1);return false;">
@@ -24,7 +24,7 @@
                             {{ Form::label('title','Title*') }}
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="row">
                         <div class="col-sm-12">
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 {{ Form::textarea('content',old('content'),[ 'id' => 'my-ckeditor2' ,'class'=>'my-ckeditor']) }}
                                 <br>
-                                {{ Form::label('Content','Content')}}           
+                                {{ Form::label('Content','Content')}}
                             </div>
                         </div>
                     </div>
@@ -48,14 +48,14 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 {{ Form::checkbox('is_featured',1, isset($service) ? $service->is_featured ? 'checked'  :'':'')}}
-                                {{ Form::label('is_featured','Add to this list') }}                                
+                                {{ Form::label('is_featured','Add to this list') }}
                             </div>
                         </div>
-                    
+
                     </div>
-               
-               
-                
+
+
+
                 <div class="row">
                     <div class="col-sm-12">
                             <label class="text-default-light">Featured Image(Optiional)</label>
@@ -69,10 +69,12 @@
                             <input type="hidden" name="removeimage" id="removeimage" value=""/>
                     </div>
                 </div>
-                
 
-                
-               
+                <input type="hidden" id="custId" name="brand_id" value="{{$brand}}">
+
+
+
+
             </div>
         </div>
     </div>

@@ -164,10 +164,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::group([ 'as' => 'service.', 'prefix' => 'service' ], function () {
       Route::get('{brand}', 'ServiceController@index')->name('index');
       Route::post('store/{brand}', 'ServiceController@store')->name('store');
-      Route::put('{service}', 'ServiceController@update')->name('update');
-      Route::get('create/service/{brand}', 'ServiceController@create')->name('create');
-      Route::get('{service}/edit', 'ServiceController@edit')->name('edit');
-      Route::delete('{service}', 'ServiceController@destroy')->name('destroy');
+        Route::get('create/service/{brand}', 'ServiceController@create')->name('create');
+        Route::get('{service}/edit', 'ServiceController@edit')->name('edit');
+        Route::put('{service}', 'ServiceController@update')->name('update');
+        Route::delete('{service}', 'ServiceController@destroy')->name('destroy');
   });
 
 

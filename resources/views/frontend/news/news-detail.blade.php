@@ -18,7 +18,7 @@
 	                </nav>
 	            </div>
 	        </div>
-	    </div> 
+	    </div>
 	</section>
 	<!-- END SECTION BANNER -->
 
@@ -34,36 +34,39 @@
 	                        </a>
 	                        <div class="event_date radius_all_5">
                         		<h5><span>{{$news->created_at->format('d')}}</span> </h5>
-			                   	<span class="event_time bg_default">{{$news->created_at->format('M')}} {{$news->created_at->format('Y')}}</span>
+			                   	<span class="event_time bg_default">
+                                    {{$news->created_at->format('M')}}
+                                    {{$news->created_at->format('Y')}}
+                                </span>
                         	</div>
-	                      
+
 	                    </div>
 	                    <div class="course_detail alert-warning">
 	                        <div class="course_title">
 	                            <h2>{{ $news ->title }}</h2>
 	                        </div>
-	                        
+
 	                    </div>
 	                    <div class="course_tabs">
-	                   
+
 	                        <div class="tab-content">
-	                            <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab1">
-	                               
-	                               <div class="border radius_all_5 tab_box"> 
+	                            <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                     aria-labelledby="overview-tab1">
+	                               <div class="border radius_all_5 tab_box">
 	                               @if(!empty($news->content))
 	                               	<p>
 	                               		{!! $news->content !!}
-	                               		
+
 	                               	</p>
 	                               	@endif
 									</div>
-	                               		
+
 	                            </div>
-	                            
-	                           
+
+
 	                        </div>
 	                    </div>
-	                    
+
 	                </div>
 	            </div>
 	            <div class="col-lg-3 mt-lg-0 mt-4 pt-3 pt-lg-0">
@@ -83,7 +86,7 @@
                         <div class="widget widget_recent_post">
                         	<h5 class="widget_title">Related News</h5>
                             <ul class="recent_post border_bottom_dash list_none">
-                            	
+
                             	@foreach($newses as $data)
                                 <li>
                                     <div class="post_footer">
@@ -96,7 +99,7 @@
                                     </div>
                                 </li>
                                 @endforeach
-                                
+
                             </ul>
                         </div>
                         @endif
@@ -104,9 +107,9 @@
 	                    	<h5 class="widget_title">Our Feeds</h5>
 	                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMAW-Academy-for-Skills-Development-102428581395086&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     	</div>
-	                    
-	                    
-	                    
+
+
+
 	                    </div>
 	                </div>
 	            </div>

@@ -13,9 +13,9 @@
         <span class="badge">{{ $service->is_featured ? 'Yes' : 'No' }}</span>
     </td>
     <td class="text-right">
-      <!--   <a href="{{route('service.edit', $service->slug)}}" class="btn btn-flat btn-primary btn-xs">
+       <a href="{{route('service.edit',[$service->slug])}}" class="btn btn-flat btn-primary btn-xs">
             Edit
-        </a>   -->      
+        </a>
         <button type="button" data-url="{{ route('service.destroy', $service->slug) }}" class="btn btn-flat btn-primary btn-xs item-delete">
             Delete
         </button>
