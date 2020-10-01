@@ -29,7 +29,7 @@ class PartnerNotifiable extends Mailable
      */
     public function build()
     {
-        return $this->from($this->partner['email'], $this->partner['firstName'].' '.$this->partner['lastName'])
+        return $this->from('query.mawacademy@mawnepal.com', $this->partner['firstName'].' '.$this->partner['lastName'])
             ->view('frontend.mail.quick-partner')
             ->subject('Partner with Academy Email')
             ->with(['partner_businessName' => $this->partner['businessName'],

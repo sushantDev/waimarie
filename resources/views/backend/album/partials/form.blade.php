@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <label class="text-default-light">Select a Cover Image</label>
+                                        <label class="text-default-light">Select a Cover Image (Dimension: 347*239)</label>
                                         @if(isset($albums) && $albums->image)
                                             <input type="file" name="cover_image" class="dropify"
                                                    data-default-file="{{ asset($albums->image->path)}}"/>

@@ -246,7 +246,7 @@ class FrontendController extends Controller
             'message' => $request->message
         ];
 
-        Mail::to(['birajanr@gamil.com','birajanraya@gmail.com'])->send(new InquiryNotifiable($mailParam));
+        Mail::to('birajanr@gamil.com')->send(new InquiryNotifiable($mailParam));
         return redirect()->back();
     }
 

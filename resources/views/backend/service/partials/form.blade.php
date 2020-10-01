@@ -58,7 +58,7 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                            <label class="text-default-light">Featured Image(Optiional)</label>
+                            <label class="text-default-light">Featured Image(Optiional) hello</label>
                             @if(isset($service) && $service->image)
                                 <input type="file" name="image" class="dropify" id="input-file-events"
                                        data-default-file="{{ asset($service->image->path)}}"/>

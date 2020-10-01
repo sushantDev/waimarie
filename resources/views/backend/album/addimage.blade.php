@@ -40,7 +40,7 @@
                                                   class="form-control">{{$album->name}}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="image">Select an Image</label>
+                                        <label for="image">Select an Image (Dimension: 347*239)</label>
                                         {{--              {{Form::file('image')}}--}}
                                         <input type="file" name="cover_image[]" multiple>
 

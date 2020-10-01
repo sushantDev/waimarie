@@ -30,7 +30,7 @@ class InquiryNotifiable extends Mailable
      */
     public function build()
     {
-        return $this->from($this->inquiry['email'], $this->inquiry['name'])
+        return $this->from('query.mawacademy@mawnepal.com', $this->inquiry['name'])
             ->view('frontend.mail.quick-inquiry')
             ->subject('Inquiry Email')
             ->with(['inquiry_message' => $this->inquiry['message'],

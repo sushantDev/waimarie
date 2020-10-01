@@ -29,7 +29,7 @@ class HireNotifiable extends Mailable
      */
     public function build()
     {
-        return $this->from($this->hire['email'], $this->hire['firstName'].' '. $this->hire['lastName'])
+        return $this->from('query.mawacademy@mawnepal.com', $this->hire['firstName'].' '. $this->hire['lastName'])
             ->view('frontend.mail.quick-hire')
             ->subject('Hire Graduates Email')
             ->with(['hire_businessName' => $this->hire['businessName'],

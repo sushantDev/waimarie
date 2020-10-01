@@ -64,7 +64,7 @@
                     
                     <div class="row">
                     <div class="col-sm-12">
-                        <label class="text-default-light">Featured Image(Optional)</label>
+                        <label class="text-default-light">Featured Image(Optional) (Dimension: 233*223)</label>
                         @if(isset($team) && $team->image)
                             <input type="file" name="image" class="dropify"
                                    data-default-file="{{ asset($team->image->path)}}"/>

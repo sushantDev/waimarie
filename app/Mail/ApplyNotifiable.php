@@ -30,7 +30,7 @@ class ApplyNotifiable extends Mailable
      */
     public function build()
     {
-        return $this->from($this->apply['email'], $this->apply['name'])
+        return $this->from('query.mawacademy@mawnepal.com', $this->apply['name'])
             ->view('frontend.mail.quick-apply')
             ->subject('Apply Course Email')
             ->with(['apply_address' => $this->apply['address'],
