@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9c3d0ea-04ce-4d43-b857-8f628f54288d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/maw_academy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/maw_academy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/ApplyNotifiable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/ApplyNotifiable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/HireNotifiable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/HireNotifiable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/InquiryNotifiable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/InquiryNotifiable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/PartnerNotifiable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/PartnerNotifiable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/album/addimage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/album/addimage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/album/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/album/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/service/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/service/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/team/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/team/partials/form.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="e9c3d0ea-04ce-4d43-b857-8f628f54288d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir/" />
@@ -160,7 +148,7 @@
       <file leaf-file-name="form.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/team/partials/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="634">
               <caret line="66" column="102" selection-start-line="66" selection-start-column="102" selection-end-line="66" selection-end-column="102" />
             </state>
           </provider>
@@ -304,7 +292,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="784" />
     <option name="height" value="735" />
@@ -428,15 +416,15 @@
       <workItem from="1600402281056" duration="4111000" />
       <workItem from="1600749092446" duration="3499000" />
       <workItem from="1600836569962" duration="16738000" />
-      <workItem from="1601573648619" duration="2783000" />
+      <workItem from="1601573648619" duration="3382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2783000" />
+    <option name="totallyTimeSpent" value="3382000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -578,7 +566,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/team/partials/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
+        <state relative-caret-position="634">
           <caret line="66" column="102" selection-start-line="66" selection-start-column="102" selection-end-line="66" selection-end-column="102" />
         </state>
       </provider>
