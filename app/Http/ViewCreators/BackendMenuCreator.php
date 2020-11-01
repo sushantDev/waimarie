@@ -115,6 +115,13 @@ class BackendMenuCreator
             'icon'  => 'md md-account-circle',
             'title' => 'Team'
         ]);
+
+        array_push($menu, [
+            'class' => false,
+            'route' => route('funders.index'),
+            'icon'  => 'md md-account-circle',
+            'title' => 'Funder'
+        ]);
          /* */
         
 

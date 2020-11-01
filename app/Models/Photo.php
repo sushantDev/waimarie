@@ -56,6 +56,11 @@ class Photo extends Model
       return $this->morphOne(Image::class, 'imageable');
   }
 
+  public function album()
+  {
+      return $this->belongsTo(Album::class);
+  }
+
   /**
    * @param array $options
    * @return bool|null|void

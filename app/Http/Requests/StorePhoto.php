@@ -24,7 +24,7 @@ class StorePhoto extends FormRequest
     public function rules()
     {
         return [
-      'image' =>'image|max:4096|required'
+      'image' =>'image|max:8000|required'
         ];
     }
 

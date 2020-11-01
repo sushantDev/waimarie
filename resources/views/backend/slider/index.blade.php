@@ -20,10 +20,10 @@
                         <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th width="15%">Title</th>
+                            <th width="15%">Highlighted Title</th>
+                            <th width="20%">Non Highlighted Title</th>
                             <th width="30%">Content</th>
                             <th width="20%"> First Button Title</th>
-                            <th width="20%">Second Button Title</th>
                                 <th width="10%">Published</th>
                             <th width="20%" class="text-right">Actions</th>
                         </tr>

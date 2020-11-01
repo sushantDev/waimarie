@@ -2,48 +2,46 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    
-	
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta content="Anil z" name="author">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Eduglobal - Education & Courses HTML Template">
-	<meta name="keywords" content="academy, course, education, elearning, learning, education html template, university template, college template, school template, online education template, tution center template">
-
-	<!-- SITE TITLE -->
-	<title> Welcome to MAW Skills Academy</title>
-	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/mawlogo.png')}}">
-	<!-- Animation CSS -->
-	<link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">	
-	<!-- Latest Bootstrap min CSS -->
-	<link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" href="{{ asset('css/sweetalert2.css') }}">
-	<link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
-	
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet"> 
-	
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
- 	<!-- Icon Font CSS -->
-	<link rel="stylesheet" href="{{asset('assets/css/ionicons.min.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/css/themify-icons.css')}}">
-	<!-- FontAwesome CSS -->
-	<link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/css/lightbox.css')}}">
-	<!--- owl carousel CSS-->
-	<link rel="stylesheet" href="{{asset('assets/owlcarousel/css/owl.carousel.min.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/owlcarousel/css/owl.theme.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/owlcarousel/css/owl.theme.default.min.css')}}">
-	<!-- Magnific Popup CSS -->
-	<link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
 
 
-	<!-- Style CSS -->
-	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-	<link rel="stylesheet" id="layoutstyle" href="{{asset('assets/color/theme.css')}}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		  content="Waimarie: Hamilton East Community House 53 Wellington Street Hamilton East Opening Hours: 9am-4pm Monday to Friday Programme Term 1 2020 Programme Term 2 2020 Programme Term 3 2020 Waimarie: Hamilton East Community House is a small community house offering a range of services.">
+	<meta name="keywords"
+		  content="community house, hamilton, curtains, vegetables box,vege box, fruit box, budgeting advice, legal advice, entertainment book, room hire, community garden, sporting and cultural fund, hamilton east, photocopying, opportunity shop, advocacy">
+	<title>Waimarie: Hamilton East Community House – South East Kirikiriroa Community Association Inc</title>
+
+	<link rel="icon" href="http://waimarieham.wainet.org/wp-content/uploads/2016/03/Favicon-2016.bmp" sizes="192x192" />
+	<!--Google Font-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<!-- Font Awesome css-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/font-awesome.min.css')}}">
+	<!--Ion Icon-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/ionicons.min.css')}}">
+	<!-- Bootsrap css-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/bootstrap.min.css')}}">
+	<!-- Bootsrap Date Time Picker-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/bootstrap-datetimepicker.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/bootstrap-datetimepicker-standalone.css')}}">
+	<!-- Round Slider css-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/roundslider.css')}}">
+	<!-- Magnific Popup css-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/magnific-popup.css')}}">
+	<!-- Countdown css-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/jquery.countdown.css')}}">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/owl.theme.min.css')}}">
+	<!-- Style-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/style.css')}}">
+	<!-- Responsive-->
+	<link rel="stylesheet" href="{{asset('assets/waimariedemo/css/responsive.css')}}">
+	<link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+	<!-- Modernizr-->
+	<script src="{{asset('assets/waimariedemo/js/modernizr-2.8.3.min.js')}}"></script>
+
 
 	<script>
 	var sc_project=11981757; 
@@ -61,16 +59,14 @@
 	    <div class="loader-section section-right"></div>
 
 	</div>
-	
-
 
 	<div >
 	   	@include('frontend.layouts.partials.header')
-	    @include('frontend.layouts.partials.menubar')
 
 	    @yield('content')
 
 	    @include('frontend.layouts.partials.footer')
+
 	    <!-- Load Facebook SDK for JavaScript -->
       			<div id="fb-root"></div>
 	        		<script>
@@ -96,41 +92,40 @@
 	        page_id="102428581395086">
 	      </div>
 	</div>
-	<!-- Latest jQuery --> 
-	<script src="{{asset('assets/js/jquery-1.12.4.min.js')}}"></script> 
-	<!-- jquery-ui --> 
-	<script src="{{asset('assets/js/jquery-ui.js')}}"></script>
-	<!-- popper min js --> 
-	<script src="{{asset('assets/js/popper.min.js')}}"></script>
-	<!-- Latest compiled and minified Bootstrap --> 
-	<script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script> 
-	<!-- owl-carousel min js  --> 
-	<script src="{{asset('assets/owlcarousel/js/owl.carousel.min.js')}}"></script> 
-	<!-- magnific-popup min js  --> 
-	<script src="{{asset('assets/js/magnific-popup.min.js')}}"></script> 
-	<!-- waypoints min js  --> 
-	<script src="{{asset('assets/js/waypoints.min.js')}}"></script> 
-	<!-- parallax js  --> 
-	<script src="{{asset('assets/js/parallax.js')}}"></script> 
-	<!-- countdown js  --> 
-	<script src="{{asset('assets/js/jquery.countdown.min.js')}}"></script> 
-	<!-- jquery.counterup.min js --> 
-	<script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
-	<!-- imagesloaded js --> 
-	<script src="{{asset('assets/js/imagesloaded.pkgd.min.js')}}"></script>
-	<!-- isotope min js --> 
-	<script src="{{asset('assets/js/isotope.min.js')}}"></script>
-	<!------ For Popup images -------->
-	<script src="{{ asset('js/sweetalert2.min.js') }}"></script>
 
-	<!-- jquery.parallax-scroll js -->
-	<script src="{{asset('assets/js/jquery.parallax-scroll.js')}}"></script>
-	<script src="{{asset('assets/js/lightbox.min.js')}}"></script>
-	
- 
 
-	<!-- scripts js --> 
-	<script src="{{asset('assets/js/scripts.js')}}"></script>
+	<!-- Your Chat Plugin code -->
+	<div class="fb-customerchat" attribution=setup_tool page_id="598476320294201">
+	</div>
+
+	<!-- == jQuery Librery == -->
+	<script src="{{asset('assets/waimariedemo/js/jquery-2.2.4.min.js')}}"></script>
+	<!-- == Bootsrap js File == -->
+	<script src="{{asset('assets/waimariedemo/js/bootstrap.min.js')}}"></script>
+	<!-- == OWl carousel == -->
+	<script src="{{asset('assets/waimariedemo/js/owl.carousel.min.js')}}"></script>
+	<!-- == Magnific Popup == -->
+	<script src="{{asset('assets/waimariedemo/js/jquery.magnific-popup.min.js')}}"></script>
+	<!-- == Countdown == -->
+	<script src="{{asset('assets/waimariedemo/js/jquery.plugin.js')}}"></script>
+	<script src="{{asset('assets/waimariedemo/js/jquery.countdown.min.js')}}"></script>
+	<!-- == Round Slider == -->
+	<script src="{{asset('assets/waimariedemo/js/roundslider.js')}}"></script>
+	<script src="{{asset('assets/waimariedemo/js/colorfull-progressbar.js')}}"></script>
+	<!-- == Bootstrap Date Time Picker == -->
+	<script src="{{asset('assets/waimariedemo/js/moment.js')}}"></script>
+	<script src="{{asset('assets/waimariedemo/js/bootstrap-datetimepicker.min.js')}}"></script>
+	<!-- == RateYo == -->
+	<script src="{{asset('assets/waimariedemo/js/jquery.rateyo.js')}}"></script>
+	<!-- == Barfiller == -->
+	<script src="{{asset('assets/waimariedemo/js/jquery.barfiller.js')}}"></script>
+	<!-- == custom Js File == -->
+	<script src="{{asset('assets/waimariedemo/js/custom.js')}}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+	<script>
+        baguetteBox.run('.tz-gallery');
+	</script>
+
 	@stack ('scripts')
 
 </body>

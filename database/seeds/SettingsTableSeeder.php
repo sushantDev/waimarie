@@ -15,37 +15,27 @@ class SettingsTableSeeder extends Seeder {
         $settings = [
             [
                 'slug'  => 'name',
-                'value' => 'Maw Academy',
-            ],
-            
-            [
-                'slug'  => 'address',
-                'value' => 'Kathmandu,Nepal',
+                'value' => 'Waimarie: Hamilton East Community House',
             ],
            
             [
                 'slug'  => 'phone',
-                'value' => '977-1-466566, 4145884',
-            ],
-         
-            [
-                'slug'  => 'fax',
-                'value' => '977-1-6743455,345435',
+                'value' => '(07) 858 3453',
             ],
            
             [
                 'slug'  => 'email',
-                'value' => 'info@mawacademy.org',
+                'value' => 'manager@waimarie.org',
             ],
-         
+
             [
-                'slug'  => 'postbox',
-                'value' => 'PO Box 345678',
+                'slug'  => 'address',
+                'value' => '53 Wellington St, Hamilton East 3216',
             ],
-           
+
             [
                 'slug'  => 'facebook',
-                'value' => 'https://www.facebook.com/accessworld01',
+                'value' => 'https://www.facebook.com/Waimarie.Hamilton.East.Community.House',
             ],
            
             [
@@ -62,7 +52,13 @@ class SettingsTableSeeder extends Seeder {
                 'slug'  => 'logo',
                 'value' => '/img/logo.png',
             ],
-           
+
+            [
+                'slug'  => 'logojpg',
+                'value' => 'assets/waimariedemo/images/logo.jpg',
+            ],
+
+
             [
                 'slug'  => 'facebook_logo',
                 'value' => '/img/facebook.png',

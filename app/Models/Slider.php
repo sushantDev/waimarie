@@ -48,7 +48,8 @@ class Slider extends Model
 
         if ( ! $this->exists)
         {
-            $this->setUniqueSlug($value, '');
+                $this->setUniqueSlug($value, '');
+
         }
     }
 
@@ -60,17 +61,24 @@ class Slider extends Model
      */
     protected function setUniqueSlug($title, $extra)
     {
-        $slug = Str::slug($title . '-' . $extra);
+
+//dd($slug);
+//        return $slug;
+
+            $slug = Str::slug($title . '-' . $extra);
 
         if (static::whereSlug($slug)->exists())
         {
-            $this->setUniqueSlug($title, $extra + 1);
-
+//            dd($count);
+            $pieces = explode('-', $slug);
+            $number = intval(end($pieces));
+            $this->setUniqueSlug($title,  $number+1);
+//            dd($valuetest);
             return;
-        }
-
+    }
         $this->attributes['slug'] = $slug;
     }
+
 
 
 //    public function setTitleNpAttribute($value)

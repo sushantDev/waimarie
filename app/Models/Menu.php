@@ -62,7 +62,8 @@ class Menu extends Model
      */
     public function subMenus()
     {
-        return $this->hasMany(SubMenu::class)->with('childsubMenus');
+        return $this->hasMany(SubMenu::class);
+//            ->with('childsubMenus');
     }
 
     public function delete(array $options = array())

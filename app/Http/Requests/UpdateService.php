@@ -27,7 +27,7 @@ class UpdateService extends FormRequest
      {
          return [
              'title'   => 'required|max:200',
-             'image'   => 'image|max:4096',
+             'image'   => 'image|max:8000',
          ];
      }
 

@@ -34,6 +34,7 @@
     <!-- Page Level Styles -->
     @stack('styles')
 </head>
+
 <body class="menubar-hoverable header-fixed menubar-pin menubar-first">
     @if (auth()->guest())
         @yield('guest')

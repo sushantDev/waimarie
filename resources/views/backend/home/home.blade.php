@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="text-bold text-center">WELCOME TO MAWACADEMY ADMIN PANEL.</h1>
+                        <h1 class="text-bold text-center">WELCOME TO WAIMARIE ADMIN PANEL.</h1>
                     </div>
                 </div>
             </div>

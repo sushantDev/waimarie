@@ -1,9 +1,9 @@
 <tr>
     <td>{{++$key}}</td>
     <td>{{ ($slider->title) }}</td>
+    <td>{{ ($slider->second_button_title) }}</td>
     <td>{!! str_limit($slider->content,47) !!}</td>
     <td>{{ ($slider->first_button_title) }}</td>
-    <td>{{ ($slider->second_button_title) }}</td>
        <td>
         <span class="badge">{{ $slider->is_published ? 'Yes' : 'No' }}</span>
        </td>

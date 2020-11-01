@@ -99,8 +99,23 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::delete('{slider}','SliderController@delete')->name('destroy');
         });
 
+    /*
+       |--------------------------------------------------------------------------
+       | Funders CRUD Routes
+       |--------------------------------------------------------------------------
+       */
+    Route::group(['as'=>'funders.', 'prefix'=>'funders' ], function(){
+        Route::get('','FundersController@index')->name('index');
+        Route::get('create','FundersController@create')->name('create');
+        Route::post('','FundersController@store')->name('store');
+        Route::put('{funders}','FundersController@update')->name('update');
+        Route::get('{funders}/edit','FundersController@edit')->name('edit');
+        Route::delete('{funders}','FundersController@delete')->name('destroy');
+    });
 
-        //team
+
+
+    //team
         Route::group(['as'=>'team.', 'prefix'=>'team' ], function(){
         Route::get('','TeamController@index')->name('index');
         Route::get('create','TeamController@create')->name('create');
@@ -250,7 +265,9 @@ Route::get('', 'FrontendController@homepage')->name('homepage');
 Route::get('/programs/{slug?}', 'FrontendController@programs')->name('programs');
 Route::get('/services/{brand?}/{slug?}', 'FrontendController@services')->name('services');
 Route::get('/news/{slug?}', 'FrontendController@news')->name('news');
-Route::get('/history', 'FrontendController@history')->name('history');
+Route::get('/photos', 'FrontendController@photos')->name('photos');
+Route::get('/funders', 'FrontendController@funders')->name('funders');
+
 Route::get('/partner', 'FrontendController@partners')->name('partner');
 Route::get('/partnerwithacademy', 'FrontendController@partnerwithacademy')->name('partnerwithacademy');
 Route::get('/message', 'FrontendController@messageofgreeting')->name('message');

@@ -20,8 +20,8 @@ class UsersTableSeeder extends Seeder
 
         // create user
         App\Models\User::create([
-            'name'     => 'MAW ACADEMY ADMIN',
-            'email'    => 'admin@mawacademy.com',
-            'password' => bcrypt('admin@mawacademy')
+            'name'     => 'WAIMARIE ADMIN',
+            'email'    => 'admin@waimarie.com',
+            'password' => bcrypt('admin@waimarie')
         ]);    }
 }

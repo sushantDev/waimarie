@@ -25,6 +25,8 @@ use App\Models\Setting;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Image;
 use App\Models\Menu;
+use App\Photos;
+use App\Models\Funders;
 
 
 class FrontendController extends Controller
@@ -34,7 +36,7 @@ class FrontendController extends Controller
 		$program= Service::where('is_published',1)->limit(3)->get();
 		$history = Page::where('title','History')->where('is_featured',1)->first();
 		$post =  Post::where('is_published',1)->get();
-		$slider = Slider::where('is_published', 1)->get();
+		$slider = Slider::where('is_published', 1)->orderBy('id','DESC')->limit('3')->get();
         $setting = Setting::where('slug', '=', 'logo')->get();
         $client = Photo::where('view','client')->get();
         $popuphome = Photo::where('view', 'popup image')->where('is_published', 1)->orderBy('id','DESC')->get();
@@ -48,7 +50,21 @@ class FrontendController extends Controller
 
 	}
 
-	public function hiregraduates()
+    public function photos()
+    {
+        $photos = Photos::where('is_published', 1)->orderBy('id','DESC')->limit('3')->get();
+        return view('frontend.about.photos',compact('photos'));
+    }
+
+    public function funders()
+    {
+        $funders = Funders::where('is_published', 1)->get();
+        return view('frontend.about.funders',compact('funders'));
+    }
+
+
+
+    public function hiregraduates()
 	{
 		$page = Page:: where('title','Hire Graduates')->first();
 		$hireform = Form::where('view','hire-graduates')->get();
@@ -91,7 +107,7 @@ class FrontendController extends Controller
 
 	public function album()
     {
-        $albums = Album::with('Photos')->get();
+    	$albums = Album::with('Photos')->get();
         $gallery = Photo::where('view', 'gallery')->get();
         return view('frontend.album.album', compact('gallery', 'albums'));
     }

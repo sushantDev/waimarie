@@ -26,7 +26,7 @@ class StoreSlider extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required|image|max:4096',
+            'image' => 'required|image|max:8000',
         ];
     }
    
@@ -42,6 +42,7 @@ class StoreSlider extends FormRequest
         'second_button_url'     =>$this->get('second_button_url'),
         'is_published'         =>$this->has('publish')
       ];
+
       return $data;
 
     }

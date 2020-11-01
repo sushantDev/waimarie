@@ -26,14 +26,18 @@ class SliderController extends Controller
   {
     $request->validate([
             'title' => 'required',
-            'image' => 'image|max:4096',
+            'image' => 'image|max:5000',
         ]);
     DB::transaction( function () use ($request)
     {
       $data = $request->data();
-      $slider = Slider::create($data);
+
+        $slider = Slider::create($data);
+
       $this->uploadRequestImage($request,$slider);
     });
+
+
     return redirect()->route('slider.index')->withsuccess(trans('slider image has been successfully created',[ 'etity' => 'slider']));
   }
 

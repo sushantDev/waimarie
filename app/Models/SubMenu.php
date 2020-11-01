@@ -57,7 +57,6 @@ class SubMenu extends Model
         return $this->belongsTo(Menu::class);
     }
 
-
     public function childsubMenus()
     {
         return $this->hasMany(ChildSubMenu::class);

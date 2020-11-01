@@ -18,6 +18,7 @@ use App\Models\Ip;
 use App\Models\LicenseOrder;
 use App\Models\LicenseRenewal;
 use App\Models\Menu;
+use App\Models\SubMenu;
 use App\Models\Traininglocation;
 use App\Models\Program;
 use App\Models\Order;
@@ -39,6 +40,8 @@ use App\Models\WebComponent;
 use App\Models\WebOrder;
 use App\Models\WebProvision;
 use App\Models\WebRenewal;
+use Illuminate\Http\Request;
+
 use Carbon\Carbon;
 
 /**
@@ -113,6 +116,13 @@ function setting($query)
     return $setting ? $setting->value : null;
 }
 
+function set_active( $route ) {
+    if( is_array( $route ) ){
+        return in_array(Request::path(), $route) ? 'active' : '';
+    }
+    return Request::path() == $route ? 'active' : '';
+}
+
 /**
  * @param $id
  * @return mixed
@@ -138,7 +148,13 @@ function hireform()
 /* Collection of menu items */
 function menus()
 {
-    return Menu::orderBy('order','ASC')->get();
+//    return Menu::orderBy('order','as')->limit(10)->get();
+//    return Menu::where('name', '!=', '')->get();
+    return Menu::with('subMenus')->get();
+}
+
+function submenus(){
+    return SubMenu::where('order', '>=', '')->get();
 }
 
 function services()
@@ -172,5 +188,6 @@ function about()
     $about =Page::where('slug','about-us')->get();
     return $about;
 }
+
 
 

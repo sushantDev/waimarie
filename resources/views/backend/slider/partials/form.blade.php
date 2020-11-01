@@ -18,14 +18,26 @@
             </div>
             <div class="card-body tab-content">
                      <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <strong>Title*</strong>
-                                {{ Form::text('title',old('title'),['class'=>'form-control']) }}
-                            </div>
-                        </div>
+
+                         <div class="col-sm-6">
+                             <div class="form-group">
+                                 <strong>Highlighted Title*</strong>
+                                 {{ Form::text('title',old('title'),['class'=>'form-control']) }}
+                             </div>
+
+
+                         </div>
+                         <div class="col-sm-6">
+                             <div class="form-group">
+                                 <strong>Non highlighted title*</strong>
+                                 {{ Form::text('second_button_title',old('second_button_title'),['class'=>'form-control']) }}
+                             </div>
+
+                         </div>
+
                     </div>
-                    <div class="row">
+
+                <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <strong>Content*</strong>
@@ -53,26 +65,7 @@
                             
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <strong>second_button_title*</strong>
-                                    {{ Form::text('second_button_title',old('second_button_title'),['class'=>'form-control']) }}
-                                </div>
-                                
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <strong>second_button_url*</strong>
-                                    {{ Form::text('second_button_url',old('second_button_url'),['class'=>'form-control']) }}
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-12">
                             <label class="text-default-light">Featured Image    <strong>Note</strong>:(Dimension:1350*450px)</label>
