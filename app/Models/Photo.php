@@ -9,7 +9,7 @@ class Photo extends Model
   protected $fillable=[
     'title',
     'sub_description',
-    'view',
+      'category',
     'url',
     'is_published'
 
@@ -56,10 +56,16 @@ class Photo extends Model
       return $this->morphOne(Image::class, 'imageable');
   }
 
-  public function album()
-  {
-      return $this->belongsTo(Album::class);
-  }
+
+
+//  public function album()
+//  {
+//      return $this->belongsTo(Album::class);
+//  }
+
+//public function album(){
+//      return $this->belongsTo(GalleryCategory::class);
+//}
 
   /**
    * @param array $options

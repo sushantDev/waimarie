@@ -1,90 +1,60 @@
 @extends('frontend.layouts.app')
 @section('content')
-<section class="page-title-light breadcrumb_section parallax_bg overlay_bg_50" data-parallax-bg-image="{{asset('assets/images/jcb8.jpg')}}" >
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-6">
-                    <div class="page-title">
-                        <h1>Team</h1>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb justify-content-sm-end">
-                        <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a href="#">Team</a></li>
-                      </ol>
-                    </nav>
-                </div>
-            </div>
-        </div> 
-</section>
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="single_event">
-                    
-                    <div class="event_title">
-                        <div class="row align-items-end">
-                            <div class="col-md-8">
-                                <h2>Team</h2>
-                                
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                            @foreach($team as $data)
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="team_box team_style1 box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.01s">
-                                    <div class="team_img ">
-                                        <img class="new_img" src="{{asset($data->image->path)}}" alt="team1">
-                                         
-                                    </div>
-                                     <div class="team_title radius_lbrb_10 text-center">
-                                        <p class="team_name">  {{$data->name}}</p>
-                                        <p class="team_position"> {{ $data->position }} </p>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                           
-                            
-                     </div>
-                    
-                    
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 mt-lg-0 mt-4 pt-3 pt-lg-0">
-                <div class="sidebar">
-                    <div>
-                        <h5 class="widget_title">Our Feeds</h5>
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMAW-Academy-for-Skills-Development-102428581395086&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <section class="banner-area causes-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner-title">
+                        <h1>TEAM MEMBERS</h1>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- END SECTION COURSE DETAIL -->
+    </section>
 
+    <section class="team-area ash-white-bg pdb70">
+        <div class="container">
+            <div class="section-heading section-padding">
+                <h2><span>KNOW MORE ABOUT OUR</span>TEAM MEMBERS</h2>
+            </div>
+
+
+
+            <div class="row owl-slider">
+
+                <div class="team-carousel owl-carousel">
+                @foreach($team as $t)
+                <div class="item col-md-12">
+                    <div class="recent-causes-item">
+
+                        <div id="{!! ('progress' . $loop->iteration) !!}" class="colorfull-progress-active causes-item1" data-dimension="200"
+                             data-text="" data-percent="65" data-fgcolor="#ff5722" data-bgcolor="transparent"
+                             data-width="10" data-bordersize="10" data-animationstep="2">
+                            <span class="circle-texts owl-lazy  " style="line-height: 200px; font-size: 15px;
+                                    background: url({{asset($t->image->path)}});
+                                    background-size: cover;"></span>
+                        </div>
+                        <div class="recent-causes-text text-center">
+                            <h3><a href="#">{!! ($t->name) !!}</a></h3>
+                            <span class="designation yellow">{!! ($t->position) !!}</span>
+                            <p>Nam sollicitudin libero eu diam faucibus, sit amet hendrerit scelerisqususcipit. </p>
+                            <ul class="colorfull-social-icon">
+                                <li><a href="#" class="facebook-icon"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="twitter-icon"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="google-icon"><i class="fa fa-google"></i></a></li>
+                                <li><a href="#" class="linked-icon"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+
+                        </div>
+                    </div><!--/.recent-causes-item-->
+                </div>
+
+                    @endforeach
+                </div>
+                           </div>
+        </div>
+    </section><!--/.team-area-->
 
 @endsection
-@push('scripts')
-<script>
-    $(function() {
-    var $a = $(".tabs li");
-    $a.click(function() {
-        $a.removeClass("active");
-        $(this).addClass("active");
-    });
-});
 
-    
-</script>
-
-@endpush

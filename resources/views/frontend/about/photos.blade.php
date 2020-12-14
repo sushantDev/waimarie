@@ -12,58 +12,89 @@
         </div>
     </section>
 
-    <section class="deference-making-area ash-white-bg recent-news-area">
+    <section class="deference-making-area recent-news-area">
         <div class="container-fluid">
             <div class="section-heading section-padding pdb55">
-                <h2>GALLERY</h2>
+                <h2>PHOTOS</h2>
             </div>
 
-            <div class="row">
-
-                <div class="tz-gallery">
-
+            <div class="banner-preduct-wrapper">
+                <div class="container">
                     <div class="row">
 
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/photo-86.jpg')}}">
-                                <img src="{{asset('assets/waimariedemo/images/waimarie/photo-86.jpg')}}" alt="Bridge" class="img-gallery">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/Professional picture that we yellowed.jpg')}}">
-                                <img src="{{asset('assets/waimariedemo/images/waimarie/Professional picture that we yellowed.jpg')}}" alt="Park"
-                                     class="img-gallery">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/Mar P1000854.JPG')}}">
-                                <img src="{{asset('assets/waimariedemo/images/waimarie/Mar P1000854.JPG')}}" alt="Tunnel" class="img-gallery">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/trevor 1 June 18.jpeg')}}">
-                                <img src="{{asset('assets/waimariedemo/images/waimarie/trevor 1 June 18.jpeg')}}" alt="Bridge" class="img-gallery">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/our people 2.jpg')}}">
-                                <img src="{{asset('assets/waimariedemo/images/waimarie/our people 2.jpg')}}" alt="Park" class="img-gallery">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/Dec DSC01034.JPG')}}">
-                                <img src="{{asset('assets/waimariedemo/images/waimarie/Dec DSC01034.JPG')}}" alt="Tunnel" class="img-gallery">
-                            </a>
-                        </div>
 
+                        @foreach( $gallerycategorys->chunk(7) as  $slide)
+                            @foreach($slide as $sl)
+                            @if($loop -> first)
+                                    <div class="col-md-9">
+                                <div class="banner-product-image mt-10">
+                                    <a href="{{$sl->url?$sl->url:route('gallery', ['slug'=>$sl->slug])}}">
+                                        <img src="{{$sl->image->path}}"
+                                             class="img-fluid img-responsive img-large" alt="Banner images">
 
+                                    </a>
+                                    {{--<div class="overlay"></div>--}}
+                                    {{--{{route('show_album_view', ['id'=>$album->id])}}--}}
+                                    <div class="product-banner-title">
+                                        <h3><a href="{{$sl->url?$sl->url:route('gallery', ['slug'=>$sl->slug])}}" class="topic-photos">{{$sl->title}}</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            @else
+
+                                    <div class="col-md-3">
+                                <div class="banner-product-image mt-10">
+                                    <a href="{{$sl->url?$sl->url:route('gallery', ['slug'=>$sl->slug])}}">
+                                        <img src="{{$sl->image->path}}"
+                                             class="img-fluid img-responsive" alt="Banner images">
+
+                                    </a>
+                                    {{--<div class="overlay"></div>--}}
+
+                                    <div class="product-banner-title">
+                                        <h3><a href="{{$sl->url?$sl->url:route('gallery', ['slug'=>$sl->slug])}}" class="topic-photos">{{$sl->title}}</a></h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                                @endif
+                            @endforeach
+                        @endforeach
                     </div>
-
                 </div>
-
-
             </div>
-
         </div>
+    </section>
+
+
+    <section class="partner-area ash-white-bg pdb80 video-area">
+            <div class="section-heading section-padding pdb55 pages-style-heading">
+                <h1>Videos</h1>
+                <p>Movies from Storytelling Workshop for kids with They call me ninu
+                </p>
+            </div>
+            {{--<div class="all-client">--}}
+
+        @foreach($videos as $video)
+            @if($loop -> first)
+            <iframe src="{{asset($video->url)}}" frameborder="0" allowfullscreen=""
+            id="fitvid199437" class="pdt40 videosurl"></iframe>
+            @endif
+            @endforeach
+
+
+
+                <div class="row no-margin row-eq-tab video-carousel">
+                    @foreach($videos as $video)
+                            @if(!$loop -> first)
+
+                                    <div class="col-md-3 pdt70">
+                                    <iframe src="{{asset($video->url)}}" frameborder="0" allowfullscreen=""
+                                    id="fitvid199437"></iframe>
+                                    </div>
+
+                        @endif
+                    @endforeach
+                </div>
     </section>
 @endsection

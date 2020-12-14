@@ -12,45 +12,6 @@
         </div>
     </section>
 
-    {{--<section class="deference-making-area ash-white-bg recent-news-area">--}}
-        {{--<div class="container-fluid">--}}
-
-
-            {{--<div class="row funders-text">--}}
-                {{--<div class="col-md-12">--}}
-                    {{--<div class="col-md-4">--}}
-                        {{--<div class="panel panel-default">--}}
-                            {{--<div class="panel-body">--}}
-                                {{--<img src="{{asset('assets/waimariedemo/images/waimarie/anz.png')}}" alt="Responsive image" class="img-rounded img-responsive img-funders">--}}
-                            {{--</div>--}}
-                            {{--<div class="panel-footer">ANZ Staff Foundation--}}
-
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-4">--}}
-                        {{--<div class="panel panel-default">--}}
-                            {{--<div class="panel-body">--}}
-                                {{--<img src="{{asset('assets/waimariedemo/images/waimarie/len.jpg')}}" alt="Responsive image" class="img-rounded img-responsive img-funders">--}}
-                            {{--</div>--}}
-                            {{--<div class="panel-footer">Len Reynold--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-4">--}}
-                        {{--<div class="panel panel-default">--}}
-                            {{--<div class="panel-body">--}}
-                                {{--<img src="{{asset('assets/waimariedemo/images/waimarie/lions.jpg')}}" alt="Responsive image" class="img-rounded img-responsive img-funders">--}}
-                            {{--</div>--}}
-                            {{--<div class="panel-footer">Lion Foundation--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
-
     <section class="partner-area ash-white-bg pdb80">
         <div class="container">
 
@@ -62,14 +23,10 @@
             <div class="all-client">
                 <div class="row no-margin row-eq-tab">
                     @foreach($funders as $funder)
-{{--                    {{dd(fun)}};--}}
                     <div class="col-lg-3 col-xs-6 pdl0 pdr0 client-parent">
                         <div class="single-client">
                             <div class="company-logo">
-                                {{--<img src="{{asset('assets/waimariedemo/images/waimarie/anz.png')}}" alt="Responsive image" class="img-rounded img-responsive img-funders">--}}
-
                                 <img src="{{asset($funder->image->path)}}" alt="Responsive image" class="img-rounded img-responsive img-funders">
-
                             </div>
                             <div class="company-name">
                                 <span>{!!$funder -> title  !!}</span>
@@ -81,5 +38,35 @@
                 </div>
             </div>
         </div>
+
+    </section>
+
+    <section class="partner-area grey-ash pdb80">
+        <div class="container">
+
+            <div class="section-heading section-padding pages-style-heading">
+                <h1>Supporters</h1>
+
+                    <div class="content pages-style-heading">
+
+                        <ul style="list-style: none;">
+
+                        @foreach($supporters as $supporter)
+
+                                <li><i class="ion-android-arrow-forward"></i>
+                                   &nbsp;&nbsp;<span> {!! $supporter->title !!}</span>
+                                </li>
+
+                            @endforeach
+                        </ul>
+
+                    </div>
+            </div>
+
+            <p>Also a big thank you to all those neighbours and volunteers who have given their time and energy to Waimarie.
+
+            </p>
+
+                </div>
     </section>
 @endsection

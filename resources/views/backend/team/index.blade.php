@@ -22,7 +22,6 @@
                           <th width="10%">#</th>
                           <th width="30%">Name</th>
                           <th width="40%">Position</th>
-                          <th width="40%">View</th>
                           <th width="10%" >Published</th>
                           <th width="10%" class="text-right">Actions</th>
                         </tr>

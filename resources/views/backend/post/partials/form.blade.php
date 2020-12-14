@@ -28,7 +28,7 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             {{ Form::textarea('sub_description',old('sub_description'),['class'=>'form-control', 'rows'=>2]) }}
-                            {{ Form::label('Sub','Sub Description') }}
+                            {{ Form::label('Sub','Author') }}
                         </div>
                     </div>
                 </div>
@@ -51,15 +51,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                {{ Form::checkbox('is_featured',1, isset($services) ? $services->is_featured ? 'checked'  :'':'')}}
-                                {{ Form::label('is_featured','Feature in Homepage') }}                                
-                            </div>
-                        </div>
-                    
-                    </div>
+                {{--<div class="row">--}}
+                        {{--<div class="col-sm-12">--}}
+                            {{--<div class="form-group">--}}
+                                {{--{{ Form::checkbox('is_featured',1, isset($services) ? $services->is_featured ? 'checked'  :'':'')}}--}}
+                                {{--{{ Form::label('is_featured','Feature in Homepage') }}                                --}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{----}}
+                    {{--</div>--}}
                 <!-- <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -99,7 +99,8 @@
                 <div class="card-actionbar-row">
                     <button type="reset" name="Reset" class="btn btn-default ink-reaction">Reset</button>
                     <input type="submit" name="draft" class="btn btn-info ink-reaction" value="Save Draft">
-                    <input type="submit" name="publish" class="btn btn-primary ink-reaction" value="{{ isset($post) && $post->is_published ? 'Save' : 'Publish' }}">
+                    <input type="submit" name="publish" class="btn btn-primary ink-reaction"
+                           value="{{ isset($post) && $post->is_published ? 'Save' : 'Publish' }}">
                 </div>
             </div>
         </div>

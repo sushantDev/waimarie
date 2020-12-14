@@ -5,7 +5,7 @@
 @section('content')
     <section>
         <div class="section-body">
- 			{{ Form::open(['route' =>substr(Route::currentRouteName(), 0 , strpos(Route::currentRouteName(), '.')).'.store','class'=>'form form-validate','role'=>'form', 'files'=>true, 'novalidate']) }}
+ 			{{ Form::open(['route' =>substr(Route::currentRouteName(), 0 , strpos(Route::currentRouteName(), '.')).'.store','class'=>'form form-validate','role'=>'form', 'files'=>true, 'enctype'=>'multipart/form-data','novalidate']) }}
             @include('backend.slider.partials.form', ['header' => 'Create a slider'])
             {{ Form::close() }}
         </div>

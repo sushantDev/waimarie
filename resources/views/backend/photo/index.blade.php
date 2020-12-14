@@ -21,8 +21,8 @@
                         <tr>
                           <th width="10%">#</th>
                           <th width="30%">Title</th>
-                          <th width="30%">View</th>
-                          <th width="10%" >Published</th>
+                            <th width="10%">Category</th>
+                            <th width="10%" >Published</th>
                           <th width="10%" class="text-right">Actions</th>
                         </tr>
                         </thead>

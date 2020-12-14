@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateFunders;
 use Illuminate\Support\Facades\DB;
 //use App\Models\Image;
 use App\Models\Funders;
+use App\Models\Supporters;
 use App\Http\Requests\StoreFunders;
 
 class FundersController extends Controller
@@ -43,7 +44,7 @@ class FundersController extends Controller
 
     public function show(Funders $funders)
     {
-        return view($funders->view,compact('funderss'));
+        return view($funders->view,compact('funders'));
     }
 
     public function edit(Funders $funders)
@@ -68,4 +69,5 @@ class FundersController extends Controller
 
         return back()->withsuccess(trans('Funders as been deleted successfully', ['entity'=>'funders']));
     }
+
 }

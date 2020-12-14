@@ -29,7 +29,6 @@
                           <div class="form-group">
                             <strong>Sub description*</strong>
                               {{ Form::text('sub_description',old('sub_description'),['class'=>'form-control','placeholder' => '']) }}
-
                           </div>
                       </div>
                     </div>
@@ -38,7 +37,7 @@
                     <div class="row">
                       <div class="col-sm-12">
                         <strong>Where do you want to publish this image:</strong>&nbsp;
-                        {{ Form::select('photo',['popup image'=>'popup image','client'=>'client','employers'=>'employers','industrial-advisory'=>'industrial-advisory',' government partner' => 'government partner',' funding partner' => 'funding partner',' implementing partner' => 'implementing partner']) }}
+                        {{ Form::select('category', $gallerycategorys) }}
                       </div>
 
                     </div>
@@ -56,13 +55,25 @@
 
                     <div class="row">
                       <div class="col-sm-12">
-                        <label class="text-default-light">Featured Image   (Note):(Dimensions)(partners and clients:140*120px,  employeroverview and industrial:140*120px)</label>
-                        @if(isset($photo) && $photo->image)
-                            <input type="file" name="image" class="dropify"
-                                   data-default-file="{{ asset($photo->image->path)}}"/>
-                        @else
-                            <input type="file" name="image" class="dropify"/>
-                        @endif
+                        <label class="text-default-light">Featured Image
+                        </label>
+
+                          {{--(Note):(Dimensions)(partners and clients:140*120px,  employeroverview and industrial:140*120px)</label>--}}
+
+                          {{--<input required type="file" class="form-control" name="images[]" placeholder="address" multiple>--}}
+
+                          {{--@if(isset($photo) && $photo->image)--}}
+                            {{--<input type="file" name="images[]"--}}
+                                   {{--data-default-file="{{ asset($photo->image->path)}}" multiple/>--}}
+                        {{--@else--}}
+                            {{--<input type="file" name="images[]" multiple/>--}}
+                          {{--@endif--}}
+                          @if(isset($photo) && $photo->image)
+                              <input type="file" name="image[]"
+                                     data-default-file="{{ asset($photo->image->path)}}" multiple="multiple"/>
+                          @else
+                              <input type="file" name="image[]" multiple="multiple"/>
+                          @endif
                       </div>
                     </div>
 <br>

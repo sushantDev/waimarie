@@ -32,8 +32,8 @@ class UpdatePhoto extends FormRequest
     $data=[
        'title'          => $this->get('title'),
         'sub_description'=> $this->get('sub_description'),
-       'view'           => $this->get('photo'),
-       'url'                =>$this->get('url'),
+        'category'=> $this->get('category'),
+        'url'                =>$this->get('url'),
        'is_published'   => $this->has('publish'),
       ];
       return $data;

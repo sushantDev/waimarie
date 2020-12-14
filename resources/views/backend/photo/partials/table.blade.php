@@ -1,7 +1,8 @@
 <tr>
     <td>{{++$key}}</td>
     <td>{{ str_limit($photo->title) }}</td>
-    <td>{{ $photo->view}}</td>
+    <td>{{ str_limit($photo->category) }}</td>
+
     <td class="text-center">
         <span class="badge">{{ $photo->is_published ? 'Yes' : 'No' }}</span>
 </td>

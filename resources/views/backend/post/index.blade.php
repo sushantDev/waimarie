@@ -21,8 +21,9 @@
                         <tr>
                           <th width="5%">S.No</th>
                           <th width="20%">Name</th>
-                          <th width="20%" >Content</th>
-                          <th width="20%" class="text-center">Published</th>
+                            <th width="10%">Date</th>
+                            <th width="30%" >Content</th>
+                            <th width="5%" class="text-center">Published</th>
                           <th width="15%" class="text-right">Actions</th>
                         </tr>
                         </thead>

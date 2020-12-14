@@ -11,7 +11,7 @@ class Image extends Model
     const THUMB_PATH = "thumbnails/";
     const IMAGE_PATH = "images/";
     const DEFAULT_THUMB = "public/img/avatar.png";
-    protected $fillable = [ 'name', 'path', 'size','album_id','image'];
+    protected $fillable = [ 'name', 'path', 'size','id','image'];
     protected $appends = [ 'thumbnail' ];
 
 

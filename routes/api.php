@@ -16,3 +16,16 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::post('create-payment',function ()
+//{
+//return 'create payment working';
+//}
+//);
+//
+//Route::post('execute-payment',function (Request $request)
+//{
+//    return 'execute payment working';
+//
+//}
+//);

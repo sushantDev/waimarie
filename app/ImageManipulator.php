@@ -16,6 +16,7 @@ class ImageManipulator
      * @param string $prefix
      * @return string
      */
+
     public static function getThumbnail($width, $height, $image, $thumbPath = null, $prefix = 'T')
     {
         $location = explode( '/', $image );

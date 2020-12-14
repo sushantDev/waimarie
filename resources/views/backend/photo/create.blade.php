@@ -5,7 +5,8 @@
 @section('content')
     <section>
         <div class="section-body">
-            {{ Form::open(['route' =>'photo.store','class'=>'form form-validate','role'=>'form', 'files'=>true, 'novalidate']) }}
+            {{ Form::open(['route' =>'photo.store','class'=>'form form-validate','role'=>'form',
+            'enctype'=>'multipart/form-data','files'=>true, 'novalidate']) }}
             @include('backend.photo.partials.form', ['header' => 'Create a image'])
             {{ Form::close() }}
         </div>

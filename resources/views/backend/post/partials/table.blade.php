@@ -1,6 +1,7 @@
 <tr>
     <td>{{++$key}}</td>
     <td>{{ str_limit($post->title) }}</td>
+    <td>{{ str_limit($post->sub_description) }}</td>
     <td>{!! str_limit($post->content, 40) !!}</td>
     <td class="text-center">
         <span class="badge">{{ $post->is_published ? 'Yes' : 'No' }}</span>

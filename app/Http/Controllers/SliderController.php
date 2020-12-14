@@ -62,7 +62,7 @@ class SliderController extends Controller
     return redirect()->route('slider.index')->withsuccess(trans('slider has been successfully updated',['entity'=>'slider']));
   }
 
-  public function delete(slider $slider)
+  public function delete(Slider $slider)
   {
        $slider->delete();
 

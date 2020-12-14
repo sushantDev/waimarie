@@ -2,12 +2,10 @@
 @section('content')
 
     <section class="slider-area">
+
         <div class="slider-carousel">
     @foreach($slider as $slide)
-
                 <div class="single-item">
-
-                {{--<img src="{{asset('assets/waimariedemo/images/waimarie/Mar P1000854.JPG')}}" alt="First slide" class="slider-imgages">--}}
 
                 <img src="{{asset($slide->image->path)}}" class="slider-imgages" alt="{{$slide->title}}">
 
@@ -29,48 +27,49 @@
         </div>
     </section>
 
-
-    <section class="ash-white-bg recent-news-area">
+    <section class="ash-white-bg recent-news-area" id="aboutus">
         <div class="container">
             <div class="section-heading section-padding">
-                <h2>
-                    <!-- <span> Waimarie: Hamilton East Community House</span> -->
-                    ABOUT US</h2>
+                <h2>ABOUT US</h2>
             </div>
             <div class="row">
                 <div class="col-lg-5 col-xl-5">
-                    <div class="urgent-causes">
 
-                        <p class="pdb55">
-                            A community house is a people friendly community facility usually based in a central,
-                            residential part of the community. Everyone is welcome at a community house. Being open,
-                            accessible, affordable and supportive to the community is a very important Kaupapa of a
-                            community house.
+                        {{--<p class="pdb55">--}}
+                            {{--A community house is a people friendly community facility usually based in a central,--}}
+                            {{--residential part of the community. Everyone is welcome at a community house. Being open,--}}
+                            {{--accessible, affordable and supportive to the community is a very important Kaupapa of a--}}
+                            {{--community house.--}}
 
-                            Waimarie: Hamilton East Community House has been open since the end of 2001 and is now a
-                            humming Community House for the Hamilton East area.
+                            {{--Waimarie: Hamilton East Community House has been open since the end of 2001 and is now a--}}
+                            {{--humming Community House for the Hamilton East area.--}}
 
-                            Our Vision is to promote, develop and provide services and programmes that enhance personal
-                            and community well-being, Empowerment and positive change.
+                            {{--Our Vision is to promote, develop and provide services and programmes that enhance personal--}}
+                            {{--and community well-being, Empowerment and positive change.--}}
 
-                            To encourage respect and understanding of the Treaty of Waitangi and cultural diversity
-                            within the south-east Kirikiriroa community.
-                        </p>
-                        <h3>S.E.K.C.A</h3>
+                            {{--To encourage respect and understanding of the Treaty of Waitangi and cultural diversity--}}
+                            {{--within the south-east Kirikiriroa community.--}}
+                        {{--</p>--}}
+                        {{--<h3>S.E.K.C.A</h3>--}}
 
-                        <p>
-                            The community house is governed by a committee called SEKCA (South East Kirikiriroa
-                            Community Association Inc.). This is a group of local people who volunteer their time to
-                            help govern Waimarie. We need people with an interest in the community. Specific skills
-                            needed are accounting, financial, policy formulation or an interest in the local community.
-                            The meetings are held once a month.
+                        {{--<p>--}}
+                            {{--The community house is governed by a committee called SEKCA (South East Kirikiriroa--}}
+                            {{--Community Association Inc.). This is a group of local people who volunteer their time to--}}
+                            {{--help govern Waimarie. We need people with an interest in the community. Specific skills--}}
+                            {{--needed are accounting, financial, policy formulation or an interest in the local community.--}}
+                            {{--The meetings are held once a month.--}}
 
-                            If you are interested in joining the Committee please phone the house for more details.
-                        </p>
+                            {{--If you are interested in joining the Committee please phone the house for more details.--}}
+                        {{--</p>--}}
+                    @foreach($about as $ab)
 
-                        <a href="#" class="sune-btn black-bg">KNOW MORE <i class="ion-android-arrow-forward"></i></a>
+                    <p>
+                        {!! $ab->content !!}
+                    </p>
+
+                    @endforeach
+                        {{--<a href="#" class="sune-btn black-bg">KNOW MORE <i class="ion-android-arrow-forward"></i></a>--}}
                     </div>
-                </div>
 
                 <div class="col-lg-3 col-xl-1">
                     <div class="elementor elementor-400 elementor-bc-flex-widget mt-40">
@@ -175,10 +174,16 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-xl-4 mt-40">
+                <div class="col-lg-4 col-xl-4 mt-10">
                     <!-- <img src="images/waimarie/Mar P1000854.JPG" class="img-responsive" alt="news"> -->
 
-                    <img src="{{asset('assets/waimariedemo/images/ghoduvolunteer.jpg')}}" alt="" class="img-responsive" style="border-radius: 10px">
+                    {{--<img src="{{asset('assets/waimariedemo/images/ghoduvolunteer.jpg')}}" alt="" class="img-responsive" style="border-radius: 10px">--}}
+                    <iframe
+                            src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FWaimarie.Hamilton.East.Community.House&width=361&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=400"
+                            scrolling="yes"
+                            style="border:none; overflow:hidden; width:361px; height:400px; background: white; float:right;"
+                            allowtransparency="true" frameborder="0"></iframe>
+
                     <iframe src="https://player.vimeo.com/video/199596711?title=0&amp;byline=0&amp;portrait=0"
                             width="480" height="360" frameborder="0" allowfullscreen="allowfullscreen"
                             class="vimeostyle"></iframe>
@@ -188,79 +193,142 @@
         </div>
     </section>
 
-    <section class="recent-news-area posts-color">
+    <section class="recent-news-area">
+            <div class="section-heading section-padding">
+                <h2>
+                    SERVICES</h2>
+            </div>
+
+            <section class="service-why ">
+
+                <section class="service-why__points">
+                    @foreach($services as $service)
+
+                        <div class="shop-item">
+                    <div class="service-why__point-block image" style="background-image: url({{asset($service->image->path)}});">
+                    <div class="service-why__mask"></div>
+                        <h3 class="service-why__point-title">
+                            {!! $service->title !!}
+                        </h3>
+                        <div class="overlay"></div>
+                        @if($service->slug != 'room-hire')
+                        <a href="service/{!! $service->slug !!}" class="show-detail"><i class="ion-android-arrow-forward"></i>  Details</a>
+                        @else
+                            <a href="/roomhire" class="show-detail"><i class="ion-android-arrow-forward"></i>  Details</a>
+                        @endif
+                    </div>
+                    </div>
+
+                        @endforeach
+            </section>
+            </section>
+           </section>
+
+    <section class="ash-white-bg recent-news-area">
         <div class="container">
             <div class="section-heading section-padding">
                 <h2>
                     RECENT POSTS</h2>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="news-item">
-                        <div class="image">
-                            <img src="{{asset('assets/waimariedemo/images/waimarie/trevor desk.jpeg')}}" class="img-responsive" alt="news">
-                            <div class="news-date-circle">
-                                <span>21</span>
-                                Septmeber
-                                2020
-                            </div>
-                        </div>
-                        <div class="news-text">
-                            <h3><a href="#">Happy Mental Health Awareness Week 2020 </a></h3>
-                            <p>
-                                Today is day 1 of Mental Health Awareness week. You can get involved with MHAW
-                                Wellbeing..</p>
-                        </div>
-                        <a href="#" class="read-more-icon"><span>+</span></a>
-                    </div>
-                    <!--/.news-item-->
-                </div>
-                <div class="col-md-4">
-                    <div class="news-item">
-                        <div class="image">
-                            <img src="{{asset('assets/waimariedemo/images/waimarie/kiaora.jpg')}}" class="img-responsive" alt="news">
-                            <div class="news-date-circle">
-                                <span>21</span>
-                                Septmeber
-                                2020
-                            </div>
-                        </div>
-                        <div class="news-text">
-                            <h3><a href="#">Kia Ora!</a></h3>
-                            <p>
-                                Accepting orders of the veggie boxes for this week.
-                                Seasonal fruits and veggies @ just $11/ box!
+                @foreach($posts as $post)
 
+                <div class="col-md-4">
+                    <div class="news-item">
+                        <div class="image pdt-none">
+                            <img src="{{asset($post->image->path)}}" class="img-responsive img-posts" alt="{{$post->title}}">
+                            <div class="news-date-circle">
+                                {!! $post->sub_description !!}
+                                <br>
+                                (Author)
+                            </div>
+                        </div>
+                        <div class="news-text">
+                            <h3><a href="#"> {!! $post->title !!}</a></h3>
+                            <p class="pdt20">
+                                {!! $post->content !!}
                             </p>
                         </div>
-                        <a href="#" class="read-more-icon"><span>+</span></a>
+                        <a href="post/{!! $post->slug!!}" class="read-more-icon"><span>+</span></a>
                     </div>
                     <!--/.news-item-->
                 </div>
-                <div class="col-md-4">
-                    <div class="news-item">
-                        <div class="image">
-                            <img src="{{asset('assets/waimariedemo/images/waimarie/trevor June 18.jpeg')}}" class="img-responsive" alt="news">
-                            <div class="news-date-circle">
-                                <span>20</span>
-                                Septmeber
-                                2020
+
+                    @endforeach
+            </div>
+        </div>
+    </section>
+
+    <section class="recent-news-area">
+        <div class="container">
+            <div class="section-heading section-padding">
+                <h2>
+                    GALLERY</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="tz-gallery">
+
+                    <div class="row">
+
+                        @foreach($galleries as $gallery)
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="{{asset($gallery->image->path)}}">
+                                    <img src="{{asset($gallery->image->path)}}" alt="{{$gallery->title}}" class="img-gallery">
+                                </a>
                             </div>
-                        </div>
-                        <div class="news-text">
-                            <h3><a href="#">Happy Mental Health Awareness Week 2020 </a></h3>
-                            <p>
-                                Today is day 1 of Mental Health Awareness week. You can get involved with MHAW
-                                Wellbeing..</p>
-                        </div>
-                        <a href="#" class="read-more-icon"><span>+</span></a>
+                        @endforeach
+
                     </div>
-                    <!--/.news-item-->
+
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="ash-white-bg team-area pdb70">
+        <div class="container">
+            <div class="section-heading section-padding">
+                <h2><span>KNOW MORE ABOUT OUR</span>TEAM MEMBERS</h2>
+            </div>
+
+
+
+            <div class="row owl-slider">
+
+                <div class="team-carousel owl-carousel">
+                    @foreach($team as $t)
+                        <div class="item col-md-12">
+                            <div class="recent-causes-item">
+
+                                <div id="{!! ('progress' . $loop->iteration) !!}" class="colorfull-progress-active causes-item1" data-dimension="200"
+                                     data-text="" data-percent="65" data-fgcolor="#ff5722" data-bgcolor="transparent"
+                                     data-width="10" data-bordersize="10" data-animationstep="2">
+                            <span class="circle-texts owl-lazy  " style="line-height: 200px; font-size: 15px;
+                                    background: url({{asset($t->image->path)}});
+                                    background-size: cover;"></span>
+                                </div>
+                                <div class="recent-causes-text text-center">
+                                    <h3>{!! ($t->name) !!}</h3>
+                                    <span class="designation yellow">{!! ($t->position) !!}</span>
+                                    <p>Nam sollicitudin libero eu diam faucibus, sit amet hendrerit scelerisqususcipit. </p>
+                                    <ul class="colorfull-social-icon">
+                                        <li><a href="#" class="facebook-icon"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" class="twitter-icon"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" class="google-icon"><i class="fa fa-google"></i></a></li>
+                                        <li><a href="#" class="linked-icon"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+
+                                </div>
+                            </div><!--/.recent-causes-item-->
+                        </div>
+
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section><!--/.team-area-->
 
     <section class="video-box-area">
         <div class="inner-border">
@@ -279,8 +347,6 @@
 
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -288,7 +354,6 @@
             </div>
         </div>
     </section>
-
 
     <div class="subscribe-box-area">
         <div class="container">
@@ -301,15 +366,21 @@
                         </p>
                     </div>
                     <div class="subscribe-box">
+                        <form action="{{route('newsletter')}}">
+
                         <input type="email" class="form-control subscribe-input-field" placeholder="Your Email Address">
-                        <button type="submit" class="form-control submit-button"><span>SEND</span> <i
+                        <button type="submit" class="form-control submit-button" href="{{route('newsletter')}}"><span>SEND</span> <i
                                     class="ion-android-arrow-forward"></i></button>
                         <div class="clear"></div>
+
+                        </form>
                     </div>
                     <div class="clear"></div>
                 </div>
             </div>
         </div>
     </div>
+
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>--}}
 
 @endsection

@@ -1,8 +1,8 @@
 jQuery(document).ready(function () {
     "use strict";
     /*** =====================================
-    * Mega Menu
-    * =====================================***/
+     * Mega Menu
+     * =====================================***/
     (function ($) {
         $.fn.menumaker = function (options) {
             var cssmenu = $(this),
@@ -58,8 +58,8 @@ jQuery(document).ready(function () {
         format: "multitoggle"
     });
     /*** =====================================
-    * Slider
-    * =====================================***/
+     * Slider
+     * =====================================***/
     $(".slider-carousel").owlCarousel({
         autoPlay: false,
         dots: true,
@@ -79,9 +79,248 @@ jQuery(document).ready(function () {
         ]
     });
 
+    $(".service-why__points").owlCarousel({
+        autoPlay: true,
+        autoPlayTimeout: 1000,
+        autoPlayHoverPause: true,
+        items: 3,
+        loop: true,
+        center: false,
+        rewind: false,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        freeDrag: false,
+        margin: 0,
+        stagePadding: 0,
+        merge: false,
+        mergeFit: true,
+        autoWidth: false,
+        startPosition: 0,
+        rtl: false,
+        smartSpeed: 250,
+        fluidSpeed: false,
+        dragEndSpeed: false,
+        responsive: {
+            0: {
+                items: 1
+                // nav: true
+            },
+            480: {
+                items: 2,
+                nav: false
+            },
+            768: {
+                items: 3,
+                // nav: true,
+                loop: false
+            },
+            992: {
+                items: 4,
+                // nav: true,
+                loop: false
+            }
+        },
+        responsiveRefreshRate: 200,
+        responsiveBaseElement: window,
+        fallbackEasing: "swing",
+        info: false,
+        nestedItemSelector: false,
+        autoHeight: false,
+        lazyLoad: false,
+        dots: false,
+        pagination:false,
+        navigation: true,
+        navigationText: [
+            "<i class='ion-ios-arrow-left'></i>",
+            "<i class='ion-ios-arrow-right'></i>"
+        ]
+
+    });
+
+    $(".team-carousel").owlCarousel({
+        autoPlay: true,
+        autoPlayTimeout: 1000,
+        autoPlayHoverPause: true,
+        items: 3,
+        loop: true,
+        center: false,
+        rewind: false,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        freeDrag: false,
+        margin: 0,
+        stagePadding: 0,
+        merge: false,
+        mergeFit: true,
+        autoWidth: false,
+        startPosition: 0,
+        rtl: true,
+        smartSpeed: 250,
+        fluidSpeed: false,
+        dragEndSpeed: false,
+        responsive: {
+            0: {
+                items: 1
+                // nav: true
+            },
+            480: {
+                items: 2,
+                nav: false
+            },
+            768: {
+                items: 3,
+                // nav: true,
+                loop: false
+            },
+            992: {
+                items: 4,
+                // nav: true,
+                loop: false
+            }
+        },
+        responsiveRefreshRate: 200,
+        responsiveBaseElement: window,
+        fallbackEasing: "swing",
+        info: false,
+        nestedItemSelector: false,
+        autoHeight: false,
+        lazyLoad: false,
+        dots: false,
+        pagination:false,
+        navigation: true,
+        navigationText: [
+            "<i class='ion-ios-arrow-left'></i>",
+            "<i class='ion-ios-arrow-right'></i>"
+        ]
+
+
+            });
+
+    $(".video-carousel").owlCarousel({
+        autoPlay: false,
+        autoPlayTimeout: 1000,
+        autoPlayHoverPause: true,
+        items: 4,
+        loop: false,
+        center: false,
+        rewind: false,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        freeDrag: false,
+        margin: 0,
+        stagePadding: 0,
+        merge: false,
+        mergeFit: true,
+        autoWidth: false,
+        startPosition: 0,
+        rtl: true,
+        smartSpeed: 250,
+        fluidSpeed: false,
+        dragEndSpeed: false,
+        responsive: {
+            0: {
+                items: 1
+                // nav: true
+            },
+            480: {
+                items: 2,
+                nav: false
+            },
+            768: {
+                items: 3,
+                // nav: true,
+                loop: false
+            },
+            992: {
+                items: 4,
+                // nav: true,
+                loop: false
+            }
+        },
+        responsiveRefreshRate: 200,
+        responsiveBaseElement: window,
+        fallbackEasing: "swing",
+        info: false,
+        nestedItemSelector: false,
+        autoHeight: false,
+        lazyLoad: false,
+        dots: false,
+        pagination:false,
+        navigation: true,
+        navigationText: [
+            "<i class='ion-ios-arrow-left'></i>",
+            "<i class='ion-ios-arrow-right'></i>"
+        ]
+
+
+    });
+
+    $(".service-carousel").owlCarousel({
+        autoPlay: false,
+        autoPlayTimeout: 1000,
+        autoPlayHoverPause: true,
+        items: 3,
+        loop: false,
+        center: false,
+        rewind: false,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
+        freeDrag: false,
+        margin: 0,
+        stagePadding: 0,
+        merge: false,
+        mergeFit: true,
+        autoWidth: false,
+        startPosition: 0,
+        rtl: true,
+        smartSpeed: 250,
+        fluidSpeed: false,
+        dragEndSpeed: false,
+        responsive: {
+            0: {
+                items: 1
+                // nav: true
+            },
+            480: {
+                items: 2,
+                nav: false
+            },
+            768: {
+                items: 3,
+                // nav: true,
+                loop: false
+            },
+            992: {
+                items: 4,
+                // nav: true,
+                loop: false
+            }
+        },
+        responsiveRefreshRate: 200,
+        responsiveBaseElement: window,
+        fallbackEasing: "swing",
+        info: false,
+        nestedItemSelector: false,
+        autoHeight: false,
+        lazyLoad: false,
+        dots: false,
+        pagination:false,
+        navigation: true,
+        navigationText: [
+            "<i class='ion-ios-arrow-left'></i>",
+            "<i class='ion-ios-arrow-right'></i>"
+        ]
+
+
+    });
+
     /*** =====================================
-    * Rond Slider
-    * =====================================***/
+     * Rond Slider
+     * =====================================***/
     function colorFullProgress() {
         var colorFullProgressActive = $('.colorfull-progress-active');
         var len = colorFullProgressActive.length;
@@ -116,8 +355,8 @@ jQuery(document).ready(function () {
         roundSliderActive();
     }
     /*** =====================================
-    *  Event Counter
-    * ===================================== ***/
+     *  Event Counter
+     * ===================================== ***/
     $('#event-one-counter').countdown({
         until: $.countdown.UTCDate(+10, 2017, 5 - 1, 28),
         format: 'dHM',
@@ -150,8 +389,8 @@ jQuery(document).ready(function () {
     });
 
     /*** =====================================
-    *  Popup Video
-    * ===================================== ***/
+     *  Popup Video
+     * ===================================== ***/
     // $('.video-play-box .play-button').magnificPopup({
     //     items: {
     //         src: 'https://www.youtube.com/watch?v=UAJyJt_lnKA'
@@ -159,8 +398,8 @@ jQuery(document).ready(function () {
     //     type: 'iframe', // this is default type
     // });
     /** =====================================
-    *   Barfiller
-    * ===================================== **/
+     *   Barfiller
+     * ===================================== **/
     function suneBarfiller() {
         var suneBarfiller = document.getElementsByClassName('barfiller');
         var len = suneBarfiller.length;
@@ -173,8 +412,8 @@ jQuery(document).ready(function () {
         suneBarfiller();
     }
     /** =====================================
-    * Hot Jobs Rating
-    * =====================================**/
+     * Hot Jobs Rating
+     * =====================================**/
     function sunerating() {
         var suneRate = document.getElementsByClassName('sune-rating');
         var len = suneRate.length;
@@ -191,8 +430,8 @@ jQuery(document).ready(function () {
         sunerating();
     }
     /** =====================================
-    * Event Detail Calender
-    * =====================================**/
+     * Event Detail Calender
+     * =====================================**/
     $('.calendar-day > .events').popover({
         container: '.sune-event-calender',
         content: 'Hello World',
@@ -207,16 +446,16 @@ jQuery(document).ready(function () {
         $(this).attr('data-content', html);
     });
     /** =====================================
-    * Event Detail Calender
-    * =====================================**/
+     * Event Detail Calender
+     * =====================================**/
     $('#datetimepicker').datetimepicker({
         format: 'DD/MM/YYYY'
     });
 
     /** =====================================
-    *   Search Box
-    * =====================================**/
-    $('.search-box .search-icon').on('click', function (e) {
+     *   Search Box
+     * =====================================**/
+    $('#modal-click').on('click', function (e) {
         e.preventDefault();
         $('.top-search-input-wrap').addClass('show');
 
@@ -225,8 +464,8 @@ jQuery(document).ready(function () {
         $('.top-search-input-wrap').removeClass('show');
     })
     /** =====================================
-    *   Event Calender String Counter
-    * ===================================== **/
+     *   Event Calender String Counter
+     * ===================================== **/
     function suneStrigngGet() {
         var suneString = $('.day-list .calendar-day span');
         var len = suneString.length;
@@ -237,8 +476,8 @@ jQuery(document).ready(function () {
         }
     }
     /** =====================================
-    *   Diference Making Image Background
-    * ===================================== **/
+     *   Diference Making Image Background
+     * ===================================== **/
     var imageSourch = $('.deference-making-area .image img').attr("src");
     var imagePath = "url(" + imageSourch + ")";
     $('.deference-making-area .image').css({ "background-image": imagePath });
@@ -280,3 +519,47 @@ jQuery(document).ready(function () {
     });
 });
 
+
+
+
+
+/*$('#first').mousemove(function (e) {
+    var $this = $(this);
+    var $content = $this.find('.content');
+
+    $this.css('background-position', -($this.outerHeight() -$this.outerHeight()) * ((e.clientY - $this.offset().top) / $this.outerHeight()))
+
+    console.log($this.css('background-position'), e.target);
+});*/
+
+$("#turn-off").on("change", function(){
+    if ($(this).prop( "checked" )) {
+        $(".background-div").addClass("background-attach")
+    }
+    else {
+        $(".background-div").removeClass("background-attach")
+    }
+})
+
+$('.clicking').click(function() {
+
+    if($('#amount-other').is(':checked')) {
+        $('.single-input-boxs').removeClass( "hide" );
+    }
+    else
+    {
+        $('.single-input-boxs').addClass( "hide" );
+    }
+});
+
+function IsEmpty() {
+    if(!$( ".single-input-boxs" ).hasClass( "hide" )){
+    if(document.getElementById("donationamount").value.length == 0)
+    {
+        return false;
+    }
+    }
+}
+
+baguetteBox.run('.tz-gallery', {
+});

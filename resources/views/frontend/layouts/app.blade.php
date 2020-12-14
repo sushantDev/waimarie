@@ -43,24 +43,17 @@
 	<script src="{{asset('assets/waimariedemo/js/modernizr-2.8.3.min.js')}}"></script>
 
 
-	<script>
-	var sc_project=11981757; 
-	var sc_invisible=1; 
-	var sc_security="35d2687e"; 
-	var sc_https=1; 
-	</script>
-	<script src="../../../www.statcounter.com/counter/counter.js" async></script>
+	{{--<script>--}}
+	{{--var sc_project=11981757; --}}
+	{{--var sc_invisible=1; --}}
+	{{--var sc_security="35d2687e"; --}}
+	{{--var sc_https=1; --}}
+	{{--</script>--}}
+	{{--<script src="../../../www.statcounter.com/counter/counter.js" async></script>--}}
 
 </head>
 <body>
-	<div id="preloader">
-	    <span class="spinner"></span>
-	    <div class="loader-section section-left"></div>
-	    <div class="loader-section section-right"></div>
-
-	</div>
-
-	<div >
+	<div>
 	   	@include('frontend.layouts.partials.header')
 
 	    @yield('content')
@@ -121,10 +114,8 @@
 	<script src="{{asset('assets/waimariedemo/js/jquery.barfiller.js')}}"></script>
 	<!-- == custom Js File == -->
 	<script src="{{asset('assets/waimariedemo/js/custom.js')}}"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-	<script>
-        baguetteBox.run('.tz-gallery');
-	</script>
+
+
 
 	@stack ('scripts')
 

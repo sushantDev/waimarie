@@ -51,33 +51,40 @@ class BackendMenuCreator
         ]);
           array_push($menu, [
             'class' => false,
-            'route' => route('feature.index'),
+            'route' => route('about.index'),
             'icon'  => 'md md-description',
-            'title' => 'Program',
+            'title' => 'About Section',
         ]);
-           array_push($menu, [
-           'class' => false,
+
+//             array_push($menu, [
+//            'class' => false,
+//            'route' => route('form.index'),
+//            'icon'  => 'md md-rate-review',
+//            'title' => 'Form',
+//        ]);
+//         array_push($menu, [
+//            'class' => false,
+//            'route' => route('news.index'),
+//            'icon'  => 'md md-description',
+//            'title' => 'News',
+//        ]);
+//          array_push($menu, [
+//            'class' => false,
+//            'route' => route('album.index'),
+//            'icon'  => 'md md-photo',
+//            'title' => 'GalleryCategories',
+//        ]);
+        array_push($menu, [
+            'class' => false,
+            'route' => route('gallerycategory.index'),
+            'icon'  => 'md md-photo',
+            'title' => 'GalleriesCategories'
+        ]);
+        array_push($menu, [
+            'class' => false,
             'route' => route('photo.index'),
             'icon'  => 'md md-image',
-            'title' => 'Image',
-        ]);
-             array_push($menu, [
-            'class' => false,
-            'route' => route('form.index'),
-            'icon'  => 'md md-rate-review',
-            'title' => 'Form',
-        ]);
-         array_push($menu, [
-            'class' => false,
-            'route' => route('news.index'),
-            'icon'  => 'md md-description',
-            'title' => 'News',
-        ]);
-          array_push($menu, [
-            'class' => false,
-            'route' => route('album.index'),
-            'icon'  => 'md md-photo',
-            'title' => 'Gallery',
+            'title' => 'Gallery-Photos',
         ]);
 
          array_push($menu, [
@@ -94,20 +101,20 @@ class BackendMenuCreator
             'icon'  => 'md md-image',
             'title' => 'Post',
         ]);
-         array_push($menu, [
-            'class' => false,
-            'route' => route('page.index'),
-            'icon'  => 'md md-pages',
-            'title' => 'Page',
-        ]);
-        
-         array_push($menu, [
-            'class' => false,
-            'route' => route('traininglocation.index'),
-            'icon'  => 'md md-folder',
-            'title' => 'Training location',
-        ]);
-       
+//         array_push($menu, [
+//            'class' => false,
+//            'route' => route('page.index'),
+//            'icon'  => 'md md-pages',
+//            'title' => 'Page',
+//        ]);
+//
+//         array_push($menu, [
+//            'class' => false,
+//            'route' => route('traininglocation.index'),
+//            'icon'  => 'md md-folder',
+//            'title' => 'Training location',
+//        ]);
+//
        
          array_push($menu, [
             'class' => false,
@@ -122,11 +129,45 @@ class BackendMenuCreator
             'icon'  => 'md md-account-circle',
             'title' => 'Funder'
         ]);
+        array_push($menu, [
+            'class' => false,
+            'route' => route('supporters.index'),
+            'icon'  => 'md md-account-circle',
+            'title' => 'Supporters'
+        ]);
+        array_push($menu, [
+            'class' => false,
+            'route' => route('videos.index'),
+            'icon'  => 'md md-account-circle',
+            'title' => 'Videos'
+        ]);
+
+        array_push($menu, [
+            'class' => false,
+            'route' => route('servicecategory.index'),
+            'icon'  => 'md md-account-circle',
+            'title' => 'Services List'
+        ]);
+        array_push($menu, [
+            'class' => false,
+            'route' => route('servicephoto.index'),
+            'icon'  => 'md md-image',
+            'title' => 'Service Details',
+        ]);
+        array_push($menu, [
+            'class' => false,
+            'route' => route('room.index'),
+            'icon'  => 'md md-image',
+            'title' => 'Room Hire',
+        ]);
+        array_push($menu, [
+            'class' => false,
+            'route' => route('trevor.index'),
+            'icon'  => 'md md-image',
+            'title' => 'Trevor Images',
+        ]);
          /* */
         
-
-       
-
         $view->with('allMenu', $menu);
     }
 }

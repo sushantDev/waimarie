@@ -15,6 +15,9 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout');
 Auth::routes();
 
+Route::get('home', 'Auth\LoginController@logout');
+
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 
@@ -29,22 +32,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::put('{summaries}', 'HomeController@update')->name('update');
         Route::delete('{summaries}', 'HomeController@delete')->name('delete');
     });
-
-     /*
-        |--------------------------------------------------------------------------
-        | Page CRUD Routes
-        |--------------------------------------------------------------------------
-        */
-    Route::group(['as' => 'page.', 'prefix' => 'page'], function () {
-        Route::get('', 'PageController@index')->name('index');
-        Route::get('create', 'PageController@create')->name('create');
-        Route::post('', 'PageController@store')->name('store');
-        Route::get('{page}', 'PageController@show')->name('show');
-        Route::get('{page}/edit', 'PageController@edit')->name('edit');
-        Route::put('{page}', 'PageController@update')->name('update');
-        Route::delete('{page}', 'PageController@destroy')->name('destroy');
-    });
-
 
      /*
         |--------------------------------------------------------------------------
@@ -85,11 +72,28 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             });
         });
     });
-        /*
-        |--------------------------------------------------------------------------
-        | Slider CRUD Routes
-        |--------------------------------------------------------------------------
-        */
+
+
+    /*
+|--------------------------------------------------------------------------
+| About CRUD Routes
+|-----Us---------------------------------------------------------------------
+*/
+    Route::group(['as'=>'about.', 'prefix'=>'about' ], function(){
+        Route::get('','AboutController@index')->name('index');
+        Route::get('create','AboutController@create')->name('create');
+        Route::post('','AboutController@store')->name('store');
+        Route::put('{about}','AboutController@update')->name('update');
+        Route::get('{about}/edit','AboutController@edit')->name('edit');
+        Route::delete('{about}','AboutController@delete')->name('destroy');
+    });
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Slider CRUD Routes
+    |--------------------------------------------------------------------------
+    */
         Route::group(['as'=>'slider.', 'prefix'=>'slider' ], function(){
         Route::get('','SliderController@index')->name('index');
         Route::get('create','SliderController@create')->name('create');
@@ -100,6 +104,42 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         });
 
     /*
+     *
+     *    /*
+        |--------------------------------------------------------------------------
+        | GalleryCategory CRUD Routes
+        |--------------------------------------------------------------------------
+        */
+    Route::group(['as'=>'gallerycategory.', 'prefix'=>'gallerycategory' ], function(){
+        Route::get('','GalleryCategoryController@index')->name('index');
+        Route::get('create','GalleryCategoryController@create')->name('create');
+        Route::post('','GalleryCategoryController@store')->name('store');
+        Route::put('{gallerycategory}','GalleryCategoryController@update')->name('update');
+        Route::get('{gallerycategory}/edit','GalleryCategoryController@edit')->name('edit');
+        Route::delete('{gallerycategory}','GalleryCategoryController@delete')->name('destroy');
+    });
+
+
+    /*
+  *
+  *    /*
+     |--------------------------------------------------------------------------
+     | Services CRUD Routes
+     |--------------------------------------------------------------------------
+     */
+    Route::group(['as'=>'servicecategory.', 'prefix'=>'servicecategory' ], function(){
+        Route::get('','ServicesController@index')->name('index');
+        Route::get('create','ServicesController@create')->name('create');
+        Route::post('','ServicesController@store')->name('store');
+        Route::put('{servicecategory}','ServicesController@update')->name('update');
+        Route::get('{servicecategory}/edit','ServicesController@edit')->name('edit');
+        Route::delete('{servicecategory}','ServicesController@delete')->name('destroy');
+    });
+
+
+
+    /*
+     *
        |--------------------------------------------------------------------------
        | Funders CRUD Routes
        |--------------------------------------------------------------------------
@@ -114,6 +154,35 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     });
 
 
+    /*
+       |--------------------------------------------------------------------------
+       | Supporters CRUD Routes
+       |--------------------------------------------------------------------------
+       */
+    Route::group(['as'=>'supporters.', 'prefix'=>'supporters' ], function(){
+        Route::get('','SupportersController@index')->name('index');
+        Route::get('create','SupportersController@create')->name('create');
+        Route::post('','SupportersController@store')->name('store');
+        Route::put('{supporters}','SupportersController@update')->name('update');
+        Route::get('{supporters}/edit','SupportersController@edit')->name('edit');
+        Route::delete('{supporters}','SupportersController@delete')->name('destroy');
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Videos CRUD Routes
+    |--------------------------------------------------------------------------
+    */
+    Route::group(['as'=>'videos.', 'prefix'=>'videos' ], function(){
+        Route::get('','VideosController@index')->name('index');
+        Route::get('create','VideosController@create')->name('create');
+        Route::post('','VideosController@store')->name('store');
+        Route::put('{videos}','VideosController@update')->name('update');
+        Route::get('{videos}/edit','VideosController@edit')->name('edit');
+        Route::delete('{videos}','VideosController@delete')->name('destroy');
+    });
+
+
 
     //team
         Route::group(['as'=>'team.', 'prefix'=>'team' ], function(){
@@ -124,70 +193,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('{team}/edit','TeamController@edit')->name('edit');
         Route::delete('{team}','TeamController@delete')->name('destroy');
         });
-
-        //traininglocation
-        Route::group(['as'=>'traininglocation.', 'prefix'=>'traininglocation' ], function(){
-        Route::get('','TraininglocationController@index')->name('index');
-        Route::get('create','TraininglocationController@create')->name('create');
-        Route::post('','TraininglocationController@store')->name('store');
-        Route::put('{location}','TraininglocationController@update')->name('update');
-        Route::get('{location}/edit','TraininglocationController@edit')->name('edit');
-        Route::delete('{location}','TraininglocationController@delete')->name('delete');
-        });
-
-         /*
-        |--------------------------------------------------------------------------
-        |News CRUD Routes
-        |--------------------------------------------------------------------------
-        */
-    Route::group(['as' => 'news.', 'prefix' => 'news'], function () {
-        Route::get('', 'NewsController@index')->name('index');
-        Route::get('create', 'NewsController@create')->name('create');
-        Route::post('', 'NewsController@store')->name('store');
-        Route::get('{news}/edit', 'NewsController@edit')->name('edit');
-        Route::put('{news}', 'NewsController@update')->name('update');
-        Route::delete('{news}', 'NewsController@destroy')->name('destroy');
-    });
-
-        Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
-
-
-
-
-
-    /*
-  |--------------------------------------------------------------------------
-  | BrandController CRUD Routes
-  |--------------------------------------------------------------------------
-  */
-  Route::group([ 'as' => 'feature.', 'prefix' => 'feature' ], function () {
-      Route::get('', 'BrandController@index')->name('index');
-      Route::get('create', 'BrandController@create')->name('create');
-      Route::post('', 'BrandController@store')->name('store');
-      Route::get('{brand}/edit', 'BrandController@edit')->name('edit');
-      Route::put('{brand}', 'BrandController@update')->name('update');
-      Route::delete('{brand}', 'BrandController@delete')->name('destroy');
-  });
-
-  /*
-  |--------------------------------------------------------------------------
-  | Product Controller CRUD Routes
-  |--------------------------------------------------------------------------
-  */
-
-
-    Route::group([ 'as' => 'service.', 'prefix' => 'service' ], function () {
-      Route::get('{brand}', 'ServiceController@index')->name('index');
-      Route::post('store/{brand}', 'ServiceController@store')->name('store');
-        Route::get('create/service/{brand}', 'ServiceController@create')->name('create');
-        Route::get('{service}/edit', 'ServiceController@edit')->name('edit');
-        Route::put('{service}', 'ServiceController@update')->name('update');
-        Route::delete('{service}', 'ServiceController@destroy')->name('destroy');
-  });
-
-
-
-
 
         //download file
         Route::group([ 'as' => 'download.', 'prefix' => 'download' ], function ()
@@ -216,6 +221,56 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::delete('{photo}', 'PhotoController@delete')->name('destroy');
 
         });
+
+    /*
+|--------------------------------------------------------------------------
+| Photo CRUD Routes
+|--------------------------------------------------------------------------
+*/
+    Route::group([ 'as' => 'servicephoto.', 'prefix' => 'servicephoto' ], function ()
+    {
+        Route::get('', 'ServicePhotoController@index')->name('index');
+        Route::get('create', 'ServicePhotoController@create')->name('create');
+        Route::post('store', 'ServicePhotoController@store')->name('store');
+        Route::put('{servicephoto}', 'ServicePhotoController@update')->name('update');
+        Route::get('{servicephoto}/edit', 'ServicePhotoController@edit')->name('edit');
+        Route::delete('{servicephoto}', 'ServicePhotoController@delete')->name('destroy');
+
+    });
+
+    /*
+|--------------------------------------------------------------------------
+| Trevor CRUD Routes
+|--------------------------------------------------------------------------
+*/
+    Route::group([ 'as' => 'trevor.', 'prefix' => 'trevor' ], function ()
+    {
+        Route::get('', 'TrevorController@index')->name('index');
+        Route::get('create', 'TrevorController@create')->name('create');
+        Route::post('store', 'TrevorController@store')->name('store');
+        Route::put('{trevor}', 'TrevorController@update')->name('update');
+        Route::get('{trevor}/edit', 'TrevorController@edit')->name('edit');
+        Route::delete('{trevor}', 'TrevorController@delete')->name('destroy');
+
+    });
+
+
+    /*
+|--------------------------------------------------------------------------
+| Room CRUD Routes
+|--------------------------------------------------------------------------
+*/
+    Route::group([ 'as' => 'room.', 'prefix' => 'room' ], function ()
+    {
+        Route::get('', 'RoomController@index')->name('index');
+        Route::get('create', 'RoomController@create')->name('create');
+        Route::post('store', 'RoomController@store')->name('store');
+        Route::put('{room}', 'RoomController@update')->name('update');
+        Route::get('{room}/edit', 'RoomController@edit')->name('edit');
+        Route::delete('{room}', 'RoomController@delete')->name('destroy');
+
+    });
+
               /*
         |--------------------------------------------------------------------------
         | Form CRUD Routes
@@ -233,6 +288,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         });
 
 
+    Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
 
 
   /*
@@ -254,19 +310,33 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     });
 
+
         /*
         |--------------------------------------------------------------------------
         | Frontend Controller
         |--------------------------------------------------------------------------
         */
 
+Route::get('/album/{slug}', array('as' => 'show_album','uses' => 'FrontendController@gallery'));
+
 
 Route::get('', 'FrontendController@homepage')->name('homepage');
-Route::get('/programs/{slug?}', 'FrontendController@programs')->name('programs');
-Route::get('/services/{brand?}/{slug?}', 'FrontendController@services')->name('services');
-Route::get('/news/{slug?}', 'FrontendController@news')->name('news');
+
+
 Route::get('/photos', 'FrontendController@photos')->name('photos');
 Route::get('/funders', 'FrontendController@funders')->name('funders');
+Route::get('/community', 'FrontendController@community')->name('community');
+Route::get('/scholarship', 'FrontendController@samfund')->name('scholarship');
+Route::get('/waikatofund', 'FrontendController@waikatofund')->name('waikatofund');
+Route::get('/donation', 'FrontendController@donation')->name('donation');
+Route::get('/newsletter', 'FrontendController@newsletter')->name('newsletter');
+Route::get('/enquiryform', 'FrontendController@enquiryform')->name('enquiryform');
+Route::get('/resources', 'FrontendController@resources')->name('resources');
+Route::get('/donate', 'FrontendController@donate')->name('donate');
+Route::get('/post/{id}', array('as' => 'post','uses' => 'FrontendController@post'));
+
+
+
 
 Route::get('/partner', 'FrontendController@partners')->name('partner');
 Route::get('/partnerwithacademy', 'FrontendController@partnerwithacademy')->name('partnerwithacademy');
@@ -282,11 +352,22 @@ Route::get('/success-story', 'FrontendController@success')->name('success-story'
 Route::get('/employerstestimonials', 'FrontendController@employers')->name('employerstestimonials');
 Route::get('/location', 'FrontendController@locations')->name('location');
 Route::get('/album', array('as' => 'album','uses' => 'FrontendController@album'));
-Route::get('/gallery/{id}', array('as' => 'show_album_view','uses' => 'FrontendController@gallery'));
+Route::get('/gallery/{id}', array('as' => 'gallery','uses' => 'FrontendController@gallery'));
+Route::get('/services/{id}', array('as' => 'services','uses' => 'FrontendController@services'));
+
+Route::get('/gallery', 'FrontendController@gallerylist')->name('gallerylist');
+
+
+Route::get('/service', 'FrontendController@service')->name('service');
+Route::get('/roomhire', 'FrontendController@roomhire')->name('roomhire');
+Route::get('/trevor', 'FrontendController@trevor')->name('trevor');
+
+
+Route::post('handle-payment', 'PayPalController@handlePayment')->name('make.payment');
+Route::get('cancel-payment', 'PayPalController@paymentCancel')->name('cancel.payment');
+Route::get('payment-success', 'PayPalController@paymentSuccess')->name('success.payment');
+
 Route::get('/document', 'FrontendController@document')->name('document');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
-Route::post('/inquiry', 'FrontendController@inquiry')->name('contact.inquiry');
-Route::post('/apply', 'FrontendController@apply')->name('contact.apply');
-Route::post('/hire', 'FrontendController@hire')->name('contact.hire');
-Route::post('/partner', 'FrontendController@partner')->name('contact.partner');
-Route::get('{any}', 'FrontendController@page')->name('page');
+Route::post('/newsletterrequest', 'FrontendController@newsletterrequest')->name('newsletter.newsletterrequest');
+Route::post('/contactrequest', 'FrontendController@contactrequest')->name('contact.contactrequest');

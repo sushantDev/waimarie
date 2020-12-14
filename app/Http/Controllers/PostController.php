@@ -28,14 +28,16 @@ class PostController extends Controller
     {
       $data = $request->data();
       $post = Post::create($data);
-      $this->uploadRequestImage($request,$post);
+//        if($request->hasFile('image')){
+        $this->uploadRequestImage($request, $post);
+//         }
     });
     return redirect()->route('post.index')->withsuccess(trans('posts has been successfully created',[ 'entity' => 'post']));
   }
 
   public function show(Post $post)
   {
-    return view($page->view,compact('posts'));
+    return view($post->view,compact('posts'));
   }
 
   public function edit(Post $post)

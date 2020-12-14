@@ -35,15 +35,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                   <strong>Where do you want to publish this document</strong>&nbsp;
-                                      {{ Form::select('teamsection',['leadership'=>'leadership','team'=>'team', 'industrial-advisory' => 'industrial-advisory', 'technical-advisory'=>'technical-advisory'])}}
-                            </div>
-                        </div>
-                    </div>
-
 
                     <div class="row">
                         <div class="col-sm-12">

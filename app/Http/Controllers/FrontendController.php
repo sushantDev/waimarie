@@ -3,7 +3,15 @@ namespace App\Http\Controllers;
 use App\Mail\ApplyNotifiable;
 use App\Mail\HireNotifiable;
 use App\Mail\InquiryNotifiable;
+use App\Mail\InquiryNotifiableDonation;
 use App\Mail\PartnerNotifiable;
+use App\Models\Gallery;
+use App\Models\GalleryCategory;
+use App\Models\ServiceCategory;
+use App\Models\ServicePhoto;
+use App\Models\Supporters;
+use App\Models\Trevor;
+use App\Models\Videos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -17,240 +25,181 @@ use App\Models\Product;
 use App\Models\Post;
 use App\Models\Download;
 use App\Models\Program;
-use App\Models\Form;
+use App\Models\About;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Traininglocation;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Image;
-use App\Models\Menu;
+use App\Models\Room;
 use App\Photos;
 use App\Models\Funders;
+use App\Models\Galleries;
 
 
 class FrontendController extends Controller
 {
-	public function homepage()
-	{
-		$program= Service::where('is_published',1)->limit(3)->get();
-		$history = Page::where('title','History')->where('is_featured',1)->first();
-		$post =  Post::where('is_published',1)->get();
-		$slider = Slider::where('is_published', 1)->orderBy('id','DESC')->limit('3')->get();
+    public function homepage()
+    {
+        $posts = Post::where('is_published', 1)->orderBy('id', 'DESC')->limit('3')->get();
+        $slider = Slider::where('is_published', 1)->orderBy('id', 'DESC')->limit('3')->get();
         $setting = Setting::where('slug', '=', 'logo')->get();
-        $client = Photo::where('view','client')->get();
-        $popuphome = Photo::where('view', 'popup image')->where('is_published', 1)->orderBy('id','DESC')->get();
-		return view('frontend.home',compact('setting','popuphome','slider','post','history','program','client'));
-	}
+        $services = ServiceCategory::where('is_published', 1)->get();
+        $team = Team::where('is_published', '1')->get();
+        $galleries = GalleryCategory::where('is_published', '1')->orderBy('id', 'DESC')->limit('6')->get();
+        $about = About::where('is_published', '1')->orderBy('id', 'DESC')->limit('1')->get();
+        return view('frontend.home', compact('setting', 'slider', 'posts', 'services', 'team', 'galleries','about'));
+    }
 
-	public function history()
-	{
-		$history = Page::where('title','History')->first();
-		return view('frontend.about.history',compact('history'));
+    public function roomhire()
+    {
+        $lounges = Room::where('category', 'Lounge')->orderBy('id', 'DESC')->get();
+        $rumatis = Room::where('category', 'Raumati(Outside Room)')->orderBy('id', 'DESC')->get();
+        $meetings = Room::where('category', 'Meeting/Interview Room')->orderBy('id', 'DESC')->get();
 
-	}
+
+        return view('frontend.room.roomhire', compact('lounges', 'rumatis', 'meetings'));
+
+    }
+
+    public function gallerylist()
+    {
+        $galleries = Photo::where('is_published', '1')->orderBy('id', 'DESC')->get();
+        return view('frontend.album.gallerylist', compact('galleries'));
+
+    }
+
+    public function trevor()
+    {
+        $trevors = Trevor::where('is_published', '1')->orderBy('id', 'DESC')->get();
+        return view('frontend.room.trevor', compact('trevors'));
+
+    }
 
     public function photos()
     {
-        $photos = Photos::where('is_published', 1)->orderBy('id','DESC')->limit('3')->get();
-        return view('frontend.about.photos',compact('photos'));
+        $gallerycategorys = GalleryCategory::where('is_published', 1)->orderBy('id', 'ASC')->get();
+        $videos = Videos::where('is_published', 1)->get();
+        $photos = Photos::where('is_published', 1)->orderBy('id', 'DESC')->limit('3')->get();
+        return view('frontend.about.photos', compact('photos', 'videos', 'gallerycategorys'));
     }
 
     public function funders()
     {
         $funders = Funders::where('is_published', 1)->get();
-        return view('frontend.about.funders',compact('funders'));
+        $supporters = Supporters::where('is_published', 1)->get();
+        return view('frontend.about.funders', compact('funders', 'supporters'));
+    }
+
+    public function post($slug)
+    {
+        $otherposts = Post::where('is_published', 1)->orderBy('id', 'DESC')->limit('3')->get();
+        $posts = Post::whereSlug($slug)->get();
+        return view('frontend.post.post', compact('posts','otherposts'));
+    }
+
+    public function resources()
+    {
+        return view('frontend.resources.resources');
     }
 
 
-
-    public function hiregraduates()
-	{
-		$page = Page:: where('title','Hire Graduates')->first();
-		$hireform = Form::where('view','hire-graduates')->get();
-		return view ('frontend.employers.hire',compact('page','hireform'));
-
-	}
-
-	public function overview()
-	{
-
-		$text =Page::where('title','Overview')->first();
-		$logo =Photo::where('view','employers')->get();
-		return view('frontend.employers.empoverview',compact('text','logo'));
-
-	}
-
-
-	public function document()
-	{
-		$document =Download::where('is_published','1')->get();
-		return view('frontend.brochure.document',compact('document'));
-	}
-
-	public function partnerwithacademy()
-	{
-		$page =Page::where('slug','partner-with-academy')->first();
-		return view ('frontend.employers.partnerwithacademy',compact('page'));
-
-	}
-
-	public function partners()
-	{
-		$logogovernment =Photo::where('view','government partner')->get();
-		$logoimplement = Photo::where('view','implementing partner')->get();
-		$logofund = Photo::where('view','funding partner')->get();
-		return view('frontend.partners.partner',compact('logofund','logoimplement','logogovernment'));
-
-	}
-
-
-	public function album()
+    public function contactrequest(Request $request)
     {
-    	$albums = Album::with('Photos')->get();
-        $gallery = Photo::where('view', 'gallery')->get();
+        $mailParam = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phonenumber,
+            'message' => $request->message
+        ];
+
+        Mail::to('prashant.thapa1948@gmail.com')->send(new InquiryNotifiableDonation($mailParam));
+        session()->flash('msg', 'Your message has been sent.');
+        return redirect()->back();
+    }
+
+
+    public function community()
+    {
+        return view('frontend.community.community');
+    }
+
+    public function samfund()
+    {
+        return view('frontend.scholarships.samfund');
+    }
+
+    public function waikatofund()
+    {
+        return view('frontend.scholarships.waikatofund');
+    }
+
+    public function donation()
+    {
+        return view('frontend.donation.donation');
+    }
+
+    public function donate()
+    {
+        return view('frontend.donation.makedonation');
+    }
+
+
+    public function newsletter()
+    {
+        return view('frontend.newsletter.newsletter');
+    }
+
+
+    public function document()
+    {
+        $document = Download::where('is_published', '1')->get();
+        return view('frontend.brochure.document', compact('document'));
+    }
+
+
+    public function album()
+    {
+        $albums = Gallery::with('Photos')->get();
+        $gallery = Gallery::where('view', 'gallery')->get();
         return view('frontend.album.album', compact('gallery', 'albums'));
     }
 
-    public function gallery($id)
+    public function gallery($slug)
     {
-        $album = Album::with('Photos')->find($id);
-        $albums = Album::with('Photos')->get();
-        return view('frontend.album.gallery', compact( 'album', 'albums'));
+        $gallerytitles = GalleryCategory::whereSlug($slug)->get();
+        $albums = Photo::where('category', $slug)->get();
+        return view('frontend.album.gallery', compact('albums', 'gallerytitles'));
+    }
+
+    public function services($slug)
+    {
+        $servicestitles = ServiceCategory::whereSlug($slug)->get();
+        $albums = ServicePhoto::where('category', $slug)->get();
+        return view('frontend.services.services', compact('albums', 'servicestitles'));
+    }
+
+    public function service()
+    {
+        $courses = ServicePhoto::where('category', 'coursesworkshopsgroups')->get();
+        $vegetables = ServicePhoto::where('category', 'vegetable-fruit-box-11')->get();
+        $legaladvices = ServicePhoto::where('category', 'legal-advice')->get();
+        $budgetadvices = ServicePhoto::where('category', 'budgeting-advice')->get();
+        $benefits = ServicePhoto::where('category', 'benefithousing-nzacc-advocacy')->get();
+        $events = ServicePhoto::where('category', 'events')->get();
+
+        return view('frontend.services.service', compact('vegetables', 'legaladvices', 'budgetadvices',
+            'benefits', 'events', 'courses'));
     }
 
 
+    public function team()
+    {
+        $team = Team::where('is_published', '1')->get();
 
-	public function leadership()
-	{
-		$leadership = Team::where('view','leadership')->get();
-
-		return view('frontend.about.leadership',compact('leadership'));
-	}
-
-
-	public function team()
-	{
-		$team = Team::where('view','team')->get();
-
-		return view('frontend.about.team',compact('team'));
-	}
-
-	public function industrial()
-	{
-		$industrial = Page::where('view','industrial-advisory')->first();
-		$teamindustrial = Team::where('view','industrial-advisory')->get();
-		$indlogo = Photo::where('view','industrial-advisory')->get();
-
-		return view('frontend.about.industrial',compact('teamindustrial','industrial','indlogo'));
-	}
-
-	public function technical()
-	{
-		$technical = Page::where('view','technical-advisory')->first();
-		$teamtechnical = Team::where('view','technical-advisory')->get();
-
-		return view('frontend.about.technical',compact('teamtechnical','technical'));
-	}
-	public function messageofgreeting()
-	{
-		$messageofmd =Page::where('slug','message-from-md')->first();
-		$messageofceo =Page::where('slug','message-from-ceo')->first();
-		return view('frontend.about.messageofgreetings',compact('messageofmd','messageofceo'));
-	}
-
-
-	public function programs($slug=null)
-	{
-		if($slug){
-
-            $service = Service::where('slug', $slug)->first();
-            $services = Service::where('is_published', 1)->limit(4)->whereNotIn('id',[$service->id])->get();
-            return view('frontend.programs.program-detail',compact('services','service'));
-		}
-		else
-		{
-			$services = Service::where('is_published', 1)->get();
-			return view('frontend.programs.program',compact('services'));
-		}
-
-	}
-	public function services($brand=null,$slug=null)
-	{
-
-		if($brand){
-
-
-			if ($slug)
-				{
-					$brands =  Brand::where('brand', $brand)->first();
-		            $service = Service::where('slug', $slug)->where('brand_id',[$brands->id])->first();
-		            $services = Service::where('is_published', 1)->whereIn('brand_id',[$brands->id])->limit(4)->whereNotIn('id',[$service->id])->get();
-		            return view('frontend.service.service-detail',compact('services','service','brands'));
-				}
-
-				else{
-					$brands =  Brand::where('brand', $brand)->first();
-					$servicelist = Service::where('is_published', 1)->where('brand_id',[$brands->id])->get();
-					return view('frontend.service.service-list',compact('servicelist','brands'));
-
-
-				}
-
-
-		}
-
-		else
-		{
-			return view('frontend.partials.errors');
-
-
-		}
-
-
-	}
-	public function news($slug=null)
-	{
-		if($slug){
-
-            $news = News::where('slug', $slug)->first();
-            $newses = News::where('is_published', 1)->limit(4)->whereNotIn('id',[$news->id])->get();
-            return view('frontend.news.news-detail',compact('news','newses'));
-		}
-		else
-		{
-			$newses = News::where('is_published', 1)->get();
-			return view('frontend.news.news-list',compact('newses'));
-		}
-
-	}
-
-	public function employers()
-	{
-		$employer =Page::where('view','employerstestimonials')->get();
-		return view ('frontend.testimonial.employers',compact('employer'));
-
-	}
-
-	public function learners()
-	{
-		$learner = Page::where('view','learnerstestimonials')->get();
-		return view ('frontend.testimonial.learners',compact('learner'));
-
-	}
-	public function success()
-	{
-		$success = Page::where('view','success-story')->get();
-		return view ('frontend.testimonial.success',compact('success'));
-
-	}
-
-	public function locations()
-	{
-        $training = Traininglocation::where('is_published',1)->get();
-
-		return view('frontend.about.traininglocation',compact('training'));
-	}
+        return view('frontend.about.team', compact('team'));
+    }
 
     public function inquiry(Request $request)
     {
@@ -261,92 +210,36 @@ class FrontendController extends Controller
             'subject' => $request->subject,
             'message' => $request->message
         ];
+        dd($mailParam);
 
-        Mail::to('birajanr@gamil.com')->send(new InquiryNotifiable($mailParam));
+
+        Mail::to('butteryhousy@gamil.com')->send(new InquiryNotifiable($mailParam));
         return redirect()->back();
     }
 
-    public function apply(Request $request)
+
+    public function newsletterrequest(Request $request)
     {
         $mailParam = [
-            'name' => $request->name,
-            'address' => $request->address,
+            'firstname' => $request->firstname,
+            'secondname' => $request->secondname,
             'email' => $request->email,
-            'phone' => $request->phone,
-            'course' => $request->course,
-            'location' => $request->location
+            'communitycheck' => $request->communitycheck,
+            'organisationcheck' => $request->organisationcheck,
+            'volunteercheck' => $request->volunteercheck,
+            'fundercheck' => $request->fundercheck
         ];
 
-        Mail::to('birajanr@gmail.com')->send(new ApplyNotifiable($mailParam));
-        return redirect()->back();
-
+        Mail::to('prashant.thapa1948@gmail.com')->send(new InquiryNotifiable($mailParam));
+        return redirect()->route('newsletter')->withsuccess(['you have been successfully subscribed']);
     }
 
-    public function hire(Request $request)
+    public function contact()
     {
-
-        $mailParam = [
-            'firstName' => $request->firstName,
-            'lastName' => $request->lastName,
-            'businessName' => $request->businessName,
-            'businessAddress' => $request->businessAddress,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'graduatesNumber' => $request->graduatesNumber,
-            'graduate' => $request->graduate
-        ];
-
-//        dd($mailParam['graduate']);
-        Mail::to('birajanr@gmail.com')->send(new HireNotifiable($mailParam));
-        return redirect()->back();
-
-    }
-
-    public function partner(Request $request)
-    {
-        $mailParam = [
-            'firstName' => $request->firstName,
-            'lastName' => $request->lastName,
-            'businessName' => $request->businessName,
-            'businessAddress' => $request->businessAddress,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'message' => $request->message
-        ];
-
-        Mail::to('birajanr@gmail.com')->send(new PartnerNotifiable($mailParam));
-        return redirect()->back();
-
-    }
-
-
-	public function contact()
-	{
         $setting = Setting::where('slug', '=', 'logo')->first();
 
-		return view('frontend.contact.contact',compact('setting'));
-	}
-
- public function page($slug = null)
-    {
-        if ($slug) {
-            $page = Page::where('slug', '=', $slug)->where('is_published', 1)->first();
-            if ($page) {
-
-                    return view('frontend.default', compact('page'));
-                }
-            } else {
-                return view('frontend.partials.errors');
-            }
-
-
+        return view('frontend.contact.contact', compact('setting'));
     }
-
-
 }
-
-
-
-
 
  ?>

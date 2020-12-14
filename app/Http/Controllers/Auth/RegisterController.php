@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
+
 
 class RegisterController extends Controller
 {
@@ -37,6 +39,13 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+//        $this->middleware('guest');
+
+//        if (Auth::check() && ((!empty(Auth::user()->role->role) == 0)||(!empty(Auth::user()->role->role) == 1)||(!empty(Auth::user()->role->role) == 2))) {
+//            $this->redirectTo=route('admin.dashboard');
+//        }else{
+//            $this->redirectTo='/';
+//        }
         $this->middleware('guest');
     }
 

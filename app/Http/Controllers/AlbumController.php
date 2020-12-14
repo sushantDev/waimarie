@@ -52,7 +52,7 @@ class AlbumController extends Controller
         $file = $request->file('cover_image');
         $random_name = str_random(8);
         $destinationPath = 'albums/';
-        $extension = $file->getClientOriginalExtension();
+        $extension = $file->getClientOriginalExt ension();
         $filename=$random_name.'_cover.'.$extension;
         $uploadSuccess = $request->file('cover_image')->move($destinationPath, $filename);
         $album = Album::create(array(

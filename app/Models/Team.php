@@ -13,7 +13,6 @@ class Team extends Model
     'position',    
     'content',   
     'email',
-    'view',
     'is_published'
 
   ];

@@ -66,7 +66,8 @@
                         </div>
                     </div>
 
-                    <div class="row">
+
+                <div class="row">
                         <div class="col-sm-12">
                             <label class="text-default-light">Featured Image    <strong>Note</strong>:(Dimension:1350*450px)</label>
                             @if(isset($slider) && $slider->image)

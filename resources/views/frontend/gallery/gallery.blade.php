@@ -75,6 +75,93 @@
         </div>
         @endif
     </div>
+
+    {{--<div class="row">--}}
+
+    {{--<div class="tz-gallery">--}}
+
+    {{--<div class="row">--}}
+
+    {{--<div class="row">--}}
+    {{--<div class="col-md-8">--}}
+    {{--<img src="{{asset('assets/waimariedemo/images/waimarie/photo-86.jpg')}}" alt="Bridge" class="img-gallery">--}}
+
+    {{--</div>--}}
+
+    {{--<div class="col-md-4">--}}
+    {{--<img src="{{asset('assets/waimariedemo/images/waimarie/Professional picture that we yellowed.jpg')}}" alt="Park">--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--<div class="col-sm-6 col-md-4">--}}
+    {{--<a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/photo-86.jpg')}}">--}}
+    {{--<img src="{{asset('assets/waimariedemo/images/waimarie/photo-86.jpg')}}" alt="Bridge" class="img-gallery">--}}
+    {{--</a>--}}
+    {{--</div>--}}
+    {{--<div class="col-sm-6 col-md-4">--}}
+    {{--<a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/Professional picture that we yellowed.jpg')}}">--}}
+    {{--<img src="{{asset('assets/waimariedemo/images/waimarie/Professional picture that we yellowed.jpg')}}" alt="Park"--}}
+    {{--class="img-gallery">--}}
+    {{--</a>--}}
+    {{--</div>--}}
+    {{--<div class="col-sm-6 col-md-4">--}}
+    {{--<a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/Mar P1000854.JPG')}}">--}}
+    {{--<img src="{{asset('assets/waimariedemo/images/waimarie/Mar P1000854.JPG')}}" alt="Tunnel" class="img-gallery">--}}
+    {{--</a>--}}
+    {{--</div>--}}
+    {{--<div class="col-sm-6 col-md-4">--}}
+    {{--<a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/trevor 1 June 18.jpeg')}}">--}}
+    {{--<img src="{{asset('assets/waimariedemo/images/waimarie/trevor 1 June 18.jpeg')}}" alt="Bridge" class="img-gallery">--}}
+    {{--</a>--}}
+    {{--</div>--}}
+    {{--<div class="col-sm-6 col-md-4">--}}
+    {{--<a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/our people 2.jpg')}}">--}}
+    {{--<img src="{{asset('assets/waimariedemo/images/waimarie/our people 2.jpg')}}" alt="Park" class="img-gallery">--}}
+    {{--</a>--}}
+    {{--</div>--}}
+    {{--<div class="col-sm-6 col-md-4">--}}
+    {{--<a class="lightbox" href="{{asset('assets/waimariedemo/images/waimarie/Dec DSC01034.JPG')}}">--}}
+    {{--<img src="{{asset('assets/waimariedemo/images/waimarie/Dec DSC01034.JPG')}}" alt="Tunnel" class="img-gallery">--}}
+    {{--</a>--}}
+    {{--</div>--}}
+
+
+    {{--</div>--}}
+
+    {{--</div>--}}
+
+
+    {{--</div>--}}
+
+
+    {{--<div class="fixed-bar">--}}
+    {{--<label>Turn off fixed background<input type="checkbox" id="turn-off" /></label>--}}
+    {{--</div>--}}
+    {{--<div class="body-wrapper">--}}
+    {{--<div class="first background-div" id="large-image-one">--}}
+    {{--<h2 class="caption-header">Home Decor</h2>--}}
+    {{--</div>--}}
+    {{--<section class="wrapper">--}}
+    {{--<div class="background-wrapper background-div" id="first">--}}
+    {{--<h2 class="caption-header">gift ideas</h2></div>--}}
+    {{--<div class="background-wrapper background-div" id="second">--}}
+    {{--<h2 class="caption-header">categories</h2></div>--}}
+    {{--<div class="background-wrapper background-div" id="third">--}}
+    {{--<h2 class="caption-header">collections</h2></div>--}}
+    {{--</section>--}}
+
+    {{--</div>--}}
+    {{--<div class="body-wrapper">--}}
+    {{--<div class="first background-div" id="large-image-two">--}}
+    {{--<h2 class="caption-header">popular & trending</h2>--}}
+    {{--</div>--}}
+    {{--<section class="wrapper" style="order: -1; padding-left: 0; padding-right: 20px">--}}
+    {{--<div class="background-wrapper background-div" id="fourth"><h2 class="caption-header">new</h2></div>--}}
+    {{--<div class="background-wrapper background-div" id="fifth"><h2 class="caption-header">mugs</h2></div>--}}
+    {{--<div class="background-wrapper background-div" id="sixth"><h2 class="caption-header">jewelry</h2></div>--}}
+    {{--</section>--}}
+    {{--</div>--}}
+
+
 </section>
 <!-- END SECTION GALLERY -->
 @endsection

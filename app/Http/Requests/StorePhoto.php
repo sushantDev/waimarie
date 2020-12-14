@@ -24,7 +24,7 @@ class StorePhoto extends FormRequest
     public function rules()
     {
         return [
-      'image' =>'image|max:8000|required'
+//      'image[]' =>'image|required'
         ];
     }
 
@@ -33,8 +33,8 @@ class StorePhoto extends FormRequest
       $data=[
         'title'          => $this->get('title'),
         'sub_description'=> $this->get('sub_description'),
-        'view'           => $this->get('photo'),
-        'url'            =>$this->get('url'),
+          'category'=> $this->get('category'),
+          'url'            =>$this->get('url'),
         'is_published'   => $this->has('publish'),
       ];
       return $data;

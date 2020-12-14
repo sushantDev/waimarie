@@ -36,7 +36,6 @@ class UpdateTeam extends FormRequest
         'position'        =>$this->get('position'),
         'content'         =>$this->get('content'),
         'email'           =>$this->get('email'),
-        'view'            =>$this->get('teamsection'),
         'is_published'    =>$this->has('publish'),
       ];
       return $data;

@@ -32,7 +32,7 @@ class BrandController extends Controller
         DB::transaction(function () use ($request) {
             $data = $request->data();
             $brand = Brand::create($data);
-              $brand->image()->create([])->setPath($request->image);
+            $brand->image()->create([])->setPath($request->image);
 
         });
         return redirect()->route('feature.index')->withSuccess(trans('messages.create_success', [ 'entity' => 'Service' ]));

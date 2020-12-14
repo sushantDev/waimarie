@@ -346,12 +346,18 @@
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Inquiry Message</th>
+                                    <th>Subscribe Newsletter</th>
                                 </tr>
                                 </thead>
                                 <tr>
                                     <td>
-                                        <p>Name: {{$inquiry_name}}
+                                        <p>First Name: {{$inquiry_firstname}}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Last Name: {{$inquiry_secondname}}
                                         </p>
                                     </td>
                                 </tr>
@@ -363,22 +369,12 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <p>Phone No. : {{$inquiry_phone}}
+                                        <p>Position: {{$inquiry_communitycheck}} &nbsp; {{$inquiry_organisationcheck}}
+                                            &nbsp; {{$inquiry_volunteercheck}}  &nbsp; {{$inquiry_fundercheck}}
                                         </p>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <p>Subject: {{$inquiry_subject}}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>Message: {{$inquiry_message}}
-                                        </p>
-                                    </td>
-                                </tr>
+
                             </table>
                         </td>
                     </tr>
