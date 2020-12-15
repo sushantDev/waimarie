@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 
-class Galleries extends Model
+class Gallery extends Model
 {
     protected $fillable=[
         'title',
@@ -15,9 +15,6 @@ class Galleries extends Model
 
     protected $table="photos";
 
-//    public function Photos(){
-//        return $this->hasMany('App\Image');
-//    }
     /**
      * The attributes that should be typecast into boolean.
      *
@@ -34,7 +31,7 @@ class Galleries extends Model
      */
     public function getRouteKeyName()
     {
-        return 'slug';
+        return 'id';
     }
 
     /**
@@ -129,35 +126,5 @@ class Galleries extends Model
     public function scopePrimary($query, $type = true)
     {
         return $query->where('is_primary', $type);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
-     */
-    public function image()
-    {
-        return $this->morphOne(Image::class, 'imageable');
-    }
-//
-//    /**
-//     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
-//     */
-//    public function banner()
-//    {
-//        return $this->morphOne(Banner::class, 'bannerable');
-//    }
-
-    /**
-     * @param array $options
-     * @return bool|null|void
-     * @throws \Exception
-     */
-    public function delete(array $options = array())
-    {
-        if ($this->image)
-            $this->image->delete();
-
-        /** @noinspection PhpMethodParametersCountMismatchInspection */
-        return parent::delete($options);
     }
 }

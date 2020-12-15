@@ -219,7 +219,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::put('{photo}', 'PhotoController@update')->name('update');
             Route::get('{photo}/edit', 'PhotoController@edit')->name('edit');
             Route::delete('{photo}', 'PhotoController@delete')->name('destroy');
-
+            Route::post('images/upload', 'PhotoImageController@upload')->name('images.upload');
+            Route::get('images/{id}/delete', 'PhotoImageController@delete')->name('images.delete');
         });
 
     /*

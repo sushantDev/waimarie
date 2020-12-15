@@ -35,7 +35,7 @@ use App\Models\Image;
 use App\Models\Room;
 use App\Photos;
 use App\Models\Funders;
-use App\Models\Galleries;
+use App\Models\Gallery;
 
 
 class FrontendController extends Controller
